@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Ritik Sah builds reliable digital systems across cloud, AI, full stack, security and data.">
-  <meta property="og:title" content="Ritik Sah | Systems Playground">
-  <meta property="og:description" content="Explore verified projects, architecture decisions and engineering evidence in an interactive systems playground.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ritik Sah is a graduate software engineer building dependable Python, cloud and security systems.">
+  <meta property="og:title" content="Ritik Sah | Software, Cloud & Security Engineer">
+  <meta property="og:description" content="Evidence-led engineering across Python backends, Azure, AI-agent security and open-source systems.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://portfolio-lilac-ten-41.vercel.app/">
-  <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#17120f">
-  <title>Ritik Sah | Systems Playground</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2317120f'/%3E%3Cpath d='M32 10 50 17v13c0 12-7 20-18 25C21 50 14 42 14 30V17l18-7Z' fill='none' stroke='%23ffb27d' stroke-width='4'/%3E%3Cpath d='m23 32 6 6 13-14' fill='none' stroke='%23fff8ed' stroke-width='4'/%3E%3C/svg%3E">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#060806">
+  <title>Ritik Sah | Software, Cloud & Security Engineer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23060806'/%3E%3Cpath d='M17 18h20c8 0 12 4 12 10 0 5-3 8-8 9l10 11H39L29 38v10H17V18Zm12 9v5h8c2 0 3-1 3-3s-1-2-3-2h-8Z' fill='%23f4f7f2'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
   <style>
     :root {
-      --night: #17120f;
-      --night-deep: #0e0b09;
-      --glass: rgba(255, 248, 239, .075);
-      --glass-strong: rgba(255, 248, 239, .115);
-      --line: rgba(255, 244, 229, .15);
-      --paper: #fff8ed;
-      --muted: #b8ada1;
-      --peach: #ffb27d;
-      --mint: #a9dfc4;
-      --blue: #9cc9ff;
-      --yellow: #f4d88d;
-      --red: #ff998f;
-      --max: 1240px;
-      --radius: 28px;
+      --ink: #060806;
+      --ink-soft: #0b100c;
+      --panel: rgba(17, 23, 18, .74);
+      --panel-solid: #111712;
+      --paper: #f4f7f2;
+      --muted: #9ca79f;
+      --line: rgba(225, 238, 227, .16);
+      --line-strong: rgba(225, 238, 227, .3);
+      --signal: #57f287;
+      --signal-deep: #1d8f4c;
+      --ice: #9bd8ff;
+      --amber: #ff9f62;
+      --max: 1320px;
+      --radius: 24px;
     }
 
     * { box-sizing: border-box; }
@@ -38,12 +38,9 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 78% 8%, rgba(255, 178, 125, .14), transparent 28%),
-        radial-gradient(circle at 17% 36%, rgba(156, 201, 255, .1), transparent 30%),
-        linear-gradient(135deg, var(--night-deep), var(--night) 48%, #221711);
+      background: var(--ink);
       color: var(--paper);
-      font-family: Manrope, sans-serif;
+      font-family: Inter, system-ui, sans-serif;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -51,356 +48,320 @@
       content: "";
       position: fixed;
       inset: 0;
-      pointer-events: none;
-      opacity: .22;
-      background-image:
-        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-      background-size: 52px 52px;
-      mask-image: radial-gradient(circle at 50% 45%, black, transparent 78%);
+      z-index: -3;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(87, 242, 135, .08), transparent 28%),
+        linear-gradient(180deg, #080b08 0%, var(--ink) 42%, #050705 100%);
     }
     a { color: inherit; }
-    button, input { font: inherit; }
-    button { color: inherit; }
-    .skip {
+    button { font: inherit; }
+    ::selection { background: var(--signal); color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
+    .skip-link {
       position: fixed;
       left: 18px;
-      top: -80px;
-      z-index: 1000;
+      top: -70px;
+      z-index: 200;
       padding: 10px 14px;
       background: var(--paper);
-      color: var(--night);
+      color: var(--ink);
       border-radius: 10px;
     }
-    .skip:focus { top: 18px; }
-    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
-
-    .glass {
-      background: linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.045));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 24px 70px rgba(0,0,0,.28);
-      backdrop-filter: blur(24px) saturate(120%);
-    }
+    .skip-link:focus { top: 18px; }
     .shell { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
-    .mono { font-family: DM Mono, monospace; }
-    .eyebrow {
-      margin: 0;
-      color: var(--peach);
-      font: 500 11px DM Mono, monospace;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
+    .mono { font-family: "DM Mono", monospace; }
+    .muted { color: var(--muted); }
 
-    .side-nav {
+    .site-header {
       position: fixed;
-      z-index: 50;
-      left: 20px;
-      top: 50%;
-      translate: 0 -50%;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding: 10px;
-      border-radius: 24px;
-    }
-    .side-nav a {
-      position: relative;
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      text-decoration: none;
-      color: var(--muted);
-      transition: .2s ease;
-    }
-    .side-nav a:first-child { background: var(--paper); color: var(--night); font-weight: 800; }
-    .side-nav a:hover, .side-nav a.active { background: var(--glass-strong); color: var(--paper); transform: scale(1.07); }
-    .side-nav a:first-child:hover { background: var(--paper); color: var(--night); }
-    .nav-tip {
-      position: absolute;
-      left: 52px;
-      padding: 5px 9px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #201914;
-      color: var(--paper);
-      font: 10px DM Mono, monospace;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      opacity: 0;
+      inset: 20px 0 auto;
+      z-index: 100;
       pointer-events: none;
-      transition: .18s ease;
     }
-    .side-nav a:hover .nav-tip, .side-nav a:focus-visible .nav-tip { opacity: 1; left: 58px; }
+    .nav-wrap { display: flex; justify-content: center; }
+    .nav {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: rgba(8, 11, 8, .78);
+      box-shadow: 0 16px 50px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
+      backdrop-filter: blur(18px);
+    }
+    .nav a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background .2s ease, color .2s ease;
+    }
+    .nav a:hover, .nav a.active { background: var(--paper); color: var(--ink); }
+    .brand {
+      position: fixed;
+      top: 28px;
+      left: max(24px, calc((100vw - var(--max)) / 2));
+      z-index: 110;
+      color: var(--paper);
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -.07em;
+    }
+    .availability {
+      position: fixed;
+      top: 30px;
+      right: max(24px, calc((100vw - var(--max)) / 2));
+      z-index: 110;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font: 11px "DM Mono", monospace;
+    }
+    .availability i { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 18px var(--signal); }
 
-    main { padding-left: 86px; }
-    section { padding: 92px 0; border-top: 1px solid rgba(255,255,255,.08); }
-    .hero { min-height: 100vh; display: grid; align-items: center; padding: 48px 0; border: 0; }
-    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 22px; }
-    .hero-copy { padding: clamp(34px, 5vw, 62px); display: flex; flex-direction: column; justify-content: center; }
-    .hero h1 {
-      max-width: 760px;
-      margin: 22px 0 0;
-      font: 600 clamp(58px, 7vw, 102px)/.86 Newsreader, serif;
-      letter-spacing: -.055em;
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding: 112px 0 80px;
     }
-    .hero h1 span { color: var(--peach); }
-    .hero-intro { max-width: 650px; margin: 30px 0 0; color: var(--muted); font-size: 17px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-    .btn {
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -15vw;
+      width: 130vw;
+      aspect-ratio: 3.6 / 1;
+      translate: -50% 0;
+      border: 2px solid rgba(87, 242, 135, .8);
+      border-radius: 50%;
+      background: radial-gradient(ellipse at 50% 0%, rgba(87,242,135,.2), transparent 45%);
+      box-shadow: 0 -2px 22px rgba(87, 242, 135, .45), 0 -40px 100px rgba(87,242,135,.12);
+      pointer-events: none;
+    }
+    .star-field {
+      position: absolute;
+      inset: 0;
+      opacity: .55;
+      background-image:
+        radial-gradient(circle at 12% 26%, white 0 1px, transparent 2px),
+        radial-gradient(circle at 74% 19%, white 0 1px, transparent 2px),
+        radial-gradient(circle at 85% 58%, var(--signal) 0 1px, transparent 2px),
+        radial-gradient(circle at 32% 73%, white 0 1px, transparent 2px),
+        radial-gradient(circle at 57% 39%, rgba(255,255,255,.5) 0 1px, transparent 2px);
+      background-size: 330px 260px, 470px 380px, 390px 310px, 520px 420px, 440px 350px;
+      mask-image: linear-gradient(black, transparent 84%);
+    }
+    .hero-layout { position: relative; z-index: 2; }
+    .hero-note {
+      position: absolute;
+      top: 10%;
+      left: 0;
+      width: 220px;
+      color: var(--muted);
+      font: 11px/1.7 "DM Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .hero-note.right { left: auto; right: 0; top: auto; bottom: 14%; }
+    .hero-title {
+      width: min(980px, 82vw);
+      margin: 0 auto;
+      text-align: center;
+      font-size: clamp(62px, 10.5vw, 156px);
+      font-weight: 900;
+      line-height: .79;
+      letter-spacing: -.085em;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+    .hero-title span { display: block; }
+    .hero-title .outline { color: transparent; -webkit-text-stroke: 1px rgba(244,247,242,.55); }
+    .hero-subtitle {
+      max-width: 690px;
+      margin: 38px auto 0;
+      color: #c9d1cb;
+      text-align: center;
+      font-size: clamp(16px, 1.7vw, 20px);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border: 1px solid var(--line);
+      min-height: 48px;
+      padding: 0 19px;
+      border: 1px solid var(--line-strong);
       border-radius: 999px;
-      background: transparent;
+      background: rgba(11,16,12,.7);
       color: var(--paper);
       text-decoration: none;
       font-size: 13px;
       font-weight: 700;
-      cursor: pointer;
-      transition: .2s ease;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
     }
-    .btn.primary { background: var(--paper); color: var(--night); border-color: var(--paper); }
-    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.42); }
-
-    .console { min-height: 650px; padding: 18px; display: flex; flex-direction: column; overflow: hidden; }
-    .console-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 8px 18px; }
-    .console-dots { display: flex; gap: 6px; }
-    .console-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
-    .console-dots i:nth-child(2) { background: var(--yellow); }
-    .console-dots i:nth-child(3) { background: var(--mint); }
-    .console-title { color: var(--muted); font: 10px DM Mono, monospace; letter-spacing: .12em; text-transform: uppercase; }
-    .console-stage {
-      position: relative;
-      flex: 1;
-      min-height: 490px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at 50% 45%, rgba(169,223,196,.12), transparent 36%),
-        rgba(7,8,8,.4);
-    }
-    .console-stage::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,.13) 1px, transparent 1.5px);
-      background-size: 25px 25px;
-      opacity: .35;
-    }
-    .orbit { position: absolute; inset: 18% 16%; border: 1px dashed rgba(255,255,255,.16); border-radius: 50%; animation: spin 32s linear infinite; }
-    .orbit::before, .orbit::after { content: ""; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--peach); box-shadow: 0 0 18px var(--peach); }
-    .orbit::before { left: 9%; top: 12%; }
-    .orbit::after { right: 6%; bottom: 19%; background: var(--blue); box-shadow: 0 0 18px var(--blue); }
-    .core {
+    .button:hover { transform: translateY(-2px); border-color: var(--signal); }
+    .button.primary { background: var(--signal); color: #041008; border-color: var(--signal); }
+    .hero-index {
       position: absolute;
       left: 50%;
-      top: 48%;
-      translate: -50% -50%;
-      width: 148px;
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      border-radius: 34px;
-      background: linear-gradient(145deg, rgba(255,178,125,.24), rgba(156,201,255,.12));
-      border: 1px solid rgba(255,255,255,.2);
-      box-shadow: 0 24px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.2);
-      transform: rotate(45deg);
-      transition: .35s ease;
+      bottom: 22px;
+      z-index: 3;
+      translate: -50% 0;
+      color: var(--muted);
+      font: 10px "DM Mono", monospace;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
-    .core span { transform: rotate(-45deg); text-align: center; font: 500 11px DM Mono, monospace; line-height: 1.5; }
-    .node {
-      position: absolute;
-      width: 126px;
-      padding: 13px;
+
+    .ticker { overflow: hidden; border-block: 1px solid var(--line); background: #090d0a; }
+    .ticker-track {
+      width: max-content;
+      display: flex;
+      gap: 34px;
+      padding: 16px 0;
+      animation: ticker 28s linear infinite;
+      color: #b8c2ba;
+      font: 12px "DM Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .ticker-track span::after { content: "◆"; margin-left: 34px; color: var(--signal); }
+
+    section { padding: 110px 0; border-top: 1px solid var(--line); }
+    .section-intro { display: grid; grid-template-columns: .7fr 1.3fr; gap: 60px; margin-bottom: 46px; }
+    .section-kicker { margin: 8px 0 0; color: var(--signal); font: 11px "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .section-intro h2 { max-width: 840px; margin: 0; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -.065em; }
+    .section-intro p { max-width: 690px; margin: 22px 0 0; color: var(--muted); font-size: 17px; }
+
+    .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .tile {
+      position: relative;
+      overflow: hidden;
+      min-height: 270px;
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+    }
+    .tile h3 { margin: 0; font-size: clamp(26px, 3vw, 42px); line-height: 1; letter-spacing: -.045em; }
+    .tile p { max-width: 620px; margin: 18px 0 0; color: var(--muted); }
+    .tile.wide { grid-column: span 7; }
+    .tile.narrow { grid-column: span 5; }
+    .tile.half { grid-column: span 6; }
+    .tile.signal {
+      background:
+        radial-gradient(circle at 78% 20%, rgba(87,242,135,.24), transparent 34%),
+        linear-gradient(145deg, #121a13, #0a0e0b);
+    }
+    .command {
+      margin: 28px 0 0;
+      padding: 18px;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: rgba(20,17,15,.84);
-      box-shadow: 0 16px 32px rgba(0,0,0,.28);
-      cursor: pointer;
-      transition: .22s ease;
+      background: rgba(0,0,0,.36);
+      color: #cbd4cd;
+      font: 13px/1.85 "DM Mono", monospace;
     }
-    .node:hover, .node.active { transform: translateY(-5px); border-color: var(--peach); background: rgba(42,30,22,.94); }
-    .node b { display: block; font-size: 12px; }
-    .node small { color: var(--muted); font: 9px DM Mono, monospace; }
-    .node[data-key="openshield"] { left: 7%; top: 16%; }
-    .node[data-key="dusk"] { right: 7%; top: 17%; }
-    .node[data-key="iotsentinel"] { left: 8%; bottom: 15%; }
-    .node[data-key="breachlens"] { right: 7%; bottom: 16%; }
-    .console-readout { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: end; padding: 16px 8px 4px; }
-    .readout-label { color: var(--peach); font: 10px DM Mono, monospace; text-transform: uppercase; letter-spacing: .1em; }
-    .readout-title { margin-top: 5px; font: 500 22px Newsreader, serif; }
-    .readout-meta { color: var(--muted); font: 10px DM Mono, monospace; text-align: right; }
+    .command b { color: var(--signal); font-weight: 500; }
+    .proof-list { display: grid; gap: 14px; margin-top: 28px; }
+    .proof-row { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .proof-row span { color: var(--signal); font: 11px "DM Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .proof-row p { margin: 0; color: #dbe1dc; font-size: 14px; }
+    .stack-cloud { display: flex; flex-wrap: wrap; align-content: end; gap: 8px; height: 150px; margin-top: 28px; }
+    .stack-cloud span { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: #c9d1cb; font: 11px "DM Mono", monospace; }
 
-    .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 36px; margin-bottom: 38px; }
-    .section-head h2 { margin: 0; font: 600 clamp(42px, 5vw, 68px)/.94 Newsreader, serif; letter-spacing: -.045em; }
-    .section-head p { max-width: 620px; margin: 8px 0 0; color: var(--muted); }
-
-    .filter-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .filter {
-      padding: 8px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: transparent;
-      color: var(--muted);
-      font: 10px DM Mono, monospace;
-      cursor: pointer;
-    }
-    .filter.active, .filter:hover { color: var(--night); background: var(--mint); border-color: var(--mint); }
-    .project-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .project-card {
-      grid-column: span 6;
-      min-height: 370px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      transition: transform .25s ease, border-color .25s ease, opacity .25s ease;
-    }
-    .project-card.featured { grid-column: span 12; min-height: 350px; }
-    .project-card:hover { transform: translateY(-6px); border-color: rgba(255,178,125,.5); }
-    .project-card.hidden { display: none; }
-    .card-top { display: flex; justify-content: space-between; align-items: start; gap: 18px; }
-    .status { color: var(--mint); font: 10px DM Mono, monospace; text-transform: uppercase; letter-spacing: .1em; }
-    .card-number { color: rgba(255,255,255,.22); font: 10px DM Mono, monospace; }
-    .project-card h3 { margin: 34px 0 10px; font: 600 35px Newsreader, serif; }
-    .project-card p { max-width: 760px; margin: 0; color: var(--muted); font-size: 14px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 20px 0; }
-    .chip { padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: #d6ccc1; font: 9px DM Mono, monospace; }
-    .card-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 9px; }
-    .text-link { color: var(--blue); font-size: 12px; font-weight: 700; text-decoration: none; }
-
-    .playground { padding: clamp(24px, 4vw, 44px); }
-    .play-grid { display: grid; grid-template-columns: 260px 1fr; gap: 22px; }
-    .play-menu { display: flex; flex-direction: column; gap: 8px; }
-    .play-tab {
-      padding: 14px 15px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,.025);
-      color: var(--muted);
-      text-align: left;
-      cursor: pointer;
-      transition: .2s ease;
-    }
-    .play-tab b { display: block; color: var(--paper); font-size: 13px; }
-    .play-tab span { font: 9px DM Mono, monospace; }
-    .play-tab.active { background: rgba(255,178,125,.13); border-color: rgba(255,178,125,.46); color: var(--peach); }
-    .flow-panel { min-width: 0; padding: 22px; border: 1px solid var(--line); border-radius: 20px; background: rgba(3,5,5,.25); }
-    .flow-toolbar { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-bottom: 24px; }
-    .flow-toolbar h3 { margin: 0; font: 500 27px Newsreader, serif; }
-    .flow-actions { display: flex; gap: 7px; }
-    .icon-btn { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; background: transparent; cursor: pointer; }
-    .icon-btn:hover { background: var(--glass-strong); }
-    .flow-track { display: grid; grid-template-columns: repeat(5, minmax(100px, 1fr)); gap: 8px; overflow-x: auto; padding: 5px 2px 18px; }
-    .flow-step {
-      position: relative;
-      min-height: 116px;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: rgba(255,255,255,.035);
-      opacity: .42;
-      transition: .25s ease;
-    }
-    .flow-step.active { opacity: 1; border-color: var(--mint); background: rgba(169,223,196,.1); transform: translateY(-4px); }
-    .flow-step.done { opacity: .75; }
-    .step-index { color: var(--peach); font: 9px DM Mono, monospace; }
-    .flow-step b { display: block; margin-top: 16px; font-size: 12px; }
-    .flow-step small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; }
-    .flow-output { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding-top: 18px; border-top: 1px solid var(--line); }
-    .flow-output p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
-    .pulse { align-self: center; width: 9px; height: 9px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 0 rgba(169,223,196,.45); animation: pulse 1.8s infinite; }
-
-    .evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .evidence-card { padding: 28px; }
-    .evidence-card h3 { margin: 0 0 20px; font: 500 27px Newsreader, serif; }
-    .evidence-row { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 14px 0; border-top: 1px solid var(--line); }
-    .evidence-row b { color: var(--peach); font: 500 10px DM Mono, monospace; }
-    .evidence-row span { color: var(--muted); font-size: 13px; }
-    .timeline { border-left: 1px solid var(--line); margin-left: 7px; }
-    .timeline article { position: relative; padding: 0 0 28px 28px; }
-    .timeline article::before { content: ""; position: absolute; left: -6px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--night); border: 2px solid var(--peach); }
-    .timeline time { color: var(--peach); font: 9px DM Mono, monospace; }
-    .timeline h4 { margin: 4px 0; font-size: 15px; }
-    .timeline p { margin: 0; color: var(--muted); font-size: 12px; }
-
-    .contact-card { padding: clamp(34px, 6vw, 72px); display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; align-items: end; }
-    .contact-card h2 { max-width: 760px; margin: 15px 0 0; font: 600 clamp(48px, 6vw, 82px)/.9 Newsreader, serif; letter-spacing: -.05em; }
-    .contact-card p { max-width: 650px; color: var(--muted); }
-    .contact-links { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-    .contact-links a { text-underline-offset: 4px; font-weight: 700; }
-    .site-footer { display: flex; justify-content: space-between; gap: 30px; padding: 22px 0 38px; color: #80766d; font: 9px DM Mono, monospace; }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
+    .projects { display: grid; gap: 18px; }
+    .project {
+      display: grid;
+      grid-template-columns: 90px 1fr 1.1fr auto;
+      gap: 28px;
       align-items: center;
-      justify-content: center;
-      padding: 22px;
-      background: rgba(8,6,5,.78);
-      backdrop-filter: blur(18px);
+      min-height: 210px;
+      padding: 26px 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.025);
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
     }
-    .modal.open { display: flex; }
-    .modal-box { width: min(780px, 100%); max-height: 88vh; overflow: auto; padding: 30px; }
-    .modal-head { display: flex; justify-content: space-between; gap: 18px; align-items: start; }
-    .modal-title { margin: 5px 0 0; font: 600 42px Newsreader, serif; }
-    .modal-close { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: transparent; cursor: pointer; }
-    .modal-summary { color: var(--muted); }
-    .modal-section { margin-top: 26px; }
-    .modal-section h4 { margin: 0 0 10px; color: var(--peach); font: 500 10px DM Mono, monospace; letter-spacing: .11em; text-transform: uppercase; }
-    .modal-list { display: grid; gap: 8px; padding: 0; list-style: none; }
-    .modal-list li { padding: 12px 13px; border: 1px solid var(--line); border-radius: 12px; color: #d7ccc0; font-size: 13px; }
+    .project:hover { transform: translateY(-4px); border-color: rgba(87,242,135,.45); background: rgba(87,242,135,.035); }
+    .project-index { color: #5f6d62; font: 13px "DM Mono", monospace; }
+    .project h3 { margin: 0; font-size: clamp(30px, 4vw, 58px); line-height: .9; letter-spacing: -.06em; }
+    .project-role { margin: 12px 0 0; color: var(--signal); font: 11px "DM Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .project-copy p { margin: 0; color: var(--muted); font-size: 15px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+    .project-tags span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 999px; color: #bec7c0; font: 10px "DM Mono", monospace; }
+    .project-links { display: flex; flex-direction: column; gap: 8px; min-width: 122px; }
+    .project-links a { text-decoration: none; font-size: 12px; font-weight: 700; }
+    .project-links a:hover { color: var(--signal); }
 
-    .reveal { opacity: 0; transform: translateY(18px); transition: .6s ease; }
+    .evidence-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px; }
+    .evidence-card { padding: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+    .evidence-card h3 { margin: 0; font-size: 28px; letter-spacing: -.04em; }
+    .evidence-card > p { color: var(--muted); }
+    .record { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 19px 0; border-top: 1px solid var(--line); }
+    .record:first-of-type { margin-top: 24px; }
+    .record b { display: block; font-size: 14px; }
+    .record small { color: var(--muted); }
+    .record a { color: var(--signal); text-decoration: none; font: 11px "DM Mono", monospace; }
+    .journey { display: grid; gap: 0; margin-top: 24px; }
+    .journey-item { position: relative; padding: 0 0 28px 30px; border-left: 1px solid var(--line-strong); }
+    .journey-item:last-child { padding-bottom: 0; }
+    .journey-item::before { content: ""; position: absolute; left: -5px; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 18px rgba(87,242,135,.45); }
+    .journey-item time { color: var(--signal); font: 10px "DM Mono", monospace; }
+    .journey-item h4 { margin: 5px 0; font-size: 17px; }
+    .journey-item p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .contact { position: relative; overflow: hidden; text-align: center; padding: 130px 0 145px; }
+    .contact::before { content: ""; position: absolute; left: 50%; bottom: -230px; width: 900px; height: 430px; translate: -50% 0; border-radius: 50%; background: rgba(87,242,135,.14); filter: blur(80px); }
+    .contact h2 { position: relative; max-width: 1000px; margin: 0 auto; font-size: clamp(54px, 9vw, 132px); line-height: .82; letter-spacing: -.08em; text-transform: uppercase; }
+    .contact p { position: relative; max-width: 650px; margin: 28px auto 0; color: var(--muted); }
+    .contact .hero-actions { position: relative; }
+    footer { padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; font: 11px "DM Mono", monospace; }
+    .footer-row a { text-decoration: none; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes pulse { 70% { box-shadow: 0 0 0 12px rgba(169,223,196,0); } }
+
+    @keyframes ticker { to { transform: translateX(-50%); } }
 
     @media (max-width: 980px) {
-      .side-nav { left: 50%; top: auto; bottom: 14px; translate: -50% 0; flex-direction: row; }
-      .nav-tip { display: none; }
-      main { padding-left: 0; padding-bottom: 82px; }
-      .hero-grid, .section-head, .contact-card { grid-template-columns: minmax(0, 1fr); }
-      .hero-grid > *, .console, .console-bar, .console-readout, .section-head > *, .contact-card > * { min-width: 0; }
-      .console { min-height: 600px; }
-      .project-card, .project-card.featured { grid-column: span 12; }
-      .play-grid { grid-template-columns: 1fr; }
-      .play-menu { display: grid; grid-template-columns: repeat(4, 1fr); }
+      .availability { display: none; }
+      .hero-note { display: none; }
+      .section-intro { grid-template-columns: 1fr; gap: 16px; }
+      .tile.wide, .tile.narrow, .tile.half { grid-column: span 12; }
+      .project { grid-template-columns: 54px 1fr; }
+      .project-copy, .project-links { grid-column: 2; }
+      .project-links { flex-direction: row; }
       .evidence-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 640px) {
+
+    @media (max-width: 720px) {
       .shell { width: min(100% - 28px, var(--max)); }
-      section { padding: 68px 0; }
-      .hero { padding-top: 16px; }
-      .hero-copy { padding: 30px 24px; }
-      .hero h1 { font-size: clamp(48px, 15vw, 66px); overflow-wrap: anywhere; }
-      .hero-intro { font-size: 15px; }
-      .hero-actions .btn { padding-inline: 14px; }
-      .console { min-height: 560px; }
-      .console-stage { min-height: 410px; }
-      .orbit { inset: 25% 10%; }
-      .core { width: 112px; }
-      .node { width: 106px; padding: 10px; }
-      .node[data-key="openshield"] { left: 3%; top: 9%; }
-      .node[data-key="dusk"] { right: 3%; top: 10%; }
-      .node[data-key="iotsentinel"] { left: 3%; bottom: 9%; }
-      .node[data-key="breachlens"] { right: 3%; bottom: 10%; }
-      .console-readout { grid-template-columns: 1fr; }
-      .readout-meta { text-align: left; }
-      .play-menu { grid-template-columns: 1fr 1fr; }
-      .flow-output { grid-template-columns: 1fr; }
-      .evidence-row { grid-template-columns: 1fr; gap: 5px; }
-      .site-footer { flex-direction: column; }
+      .site-header { inset: auto 0 14px; }
+      .nav { width: calc(100% - 28px); justify-content: space-between; }
+      .nav a { padding: 9px 11px; font-size: 11px; }
+      .brand { top: 19px; left: 18px; }
+      .hero { padding-top: 100px; }
+      .hero-title { width: 100%; font-size: clamp(54px, 17vw, 88px); }
+      .hero-title span { line-height: .86; }
+      section { padding: 82px 0; }
+      .project { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+      .project-index, .project-copy, .project-links { grid-column: 1; }
+      .project-links { flex-wrap: wrap; }
+      .proof-row { grid-template-columns: 1fr; gap: 7px; }
+      .footer-row { flex-direction: column; padding-bottom: 80px; }
     }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -409,374 +370,214 @@
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <nav class="side-nav glass" aria-label="Section navigation">
-    <a href="#home" aria-label="Home">RS<span class="nav-tip">Home</span></a>
-    <a href="#work" data-section="work" aria-label="Projects">◇<span class="nav-tip">Projects</span></a>
-    <a href="#lab" data-section="lab" aria-label="Systems playground">⌘<span class="nav-tip">Playground</span></a>
-    <a href="#evidence" data-section="evidence" aria-label="Evidence">✓<span class="nav-tip">Evidence</span></a>
-    <a href="#contact" data-section="contact" aria-label="Contact">↗<span class="nav-tip">Contact</span></a>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="brand" href="#home" aria-label="Ritik Sah home">RS</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="availability"><i aria-hidden="true"></i>Open to UK graduate roles</div>
 
   <main id="main">
     <section class="hero" id="home">
-      <div class="shell hero-grid">
-        <div class="hero-copy glass reveal">
-          <p class="eyebrow">Final-year Computing Systems student · London</p>
-          <h1>Explore how I <span>build and reason.</span></h1>
-          <p class="hero-intro">A hands-on portfolio of cloud, AI, full-stack, security and data systems. Open a project, trace an architecture or inspect the evidence behind each claim.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#lab">Enter the playground</a>
-            <a class="btn" href="https://github.com/ritiksah141" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/ritik-sah-858015335/" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="star-field" aria-hidden="true"></div>
+      <div class="shell hero-layout">
+        <p class="hero-note">Ritik Sah<br>London, United Kingdom<br>Final-year Computing Systems</p>
+        <p class="hero-note right">Python backends<br>Azure cloud systems<br>Security by design</p>
+        <h1 class="hero-title">
+          <span>Software</span>
+          <span class="outline">Cloud + Security</span>
+          <span>Engineer</span>
+        </h1>
+        <p class="hero-subtitle">I build dependable software for cloud and security use cases, with evidence in the code, tests and delivery path.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">Explore selected work</a>
+          <a class="button" href="https://github.com/ritiksah141" target="_blank" rel="noopener">GitHub profile</a>
+          <a class="button" href="mailto:ritiksah141@gmail.com">Email me</a>
+        </div>
+      </div>
+      <div class="hero-index">Scroll to inspect the systems</div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Python</span><span>REST APIs</span><span>Microsoft Azure</span><span>Docker</span><span>Linux</span><span>GitHub Actions</span><span>Automated testing</span><span>Application security</span>
+        <span>Python</span><span>REST APIs</span><span>Microsoft Azure</span><span>Docker</span><span>Linux</span><span>GitHub Actions</span><span>Automated testing</span><span>Application security</span>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="shell">
+        <div class="section-intro reveal">
+          <p class="section-kicker">About the engineer</p>
+          <div>
+            <h2>Reliable systems start with clear boundaries.</h2>
+            <p>I am a final-year BSc Computing Systems student and open-source maintainer. My work connects backend engineering, cloud delivery and security controls without treating any of them as decoration.</p>
           </div>
         </div>
 
-        <div class="console glass reveal" aria-label="Interactive project constellation">
-          <div class="console-bar"><div class="console-dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="console-title">project constellation · select a node</div></div>
-          <div class="console-stage">
-            <div class="orbit" aria-hidden="true"></div>
-            <div class="core"><span>VERIFIED<br>BUILD<br>EVIDENCE</span></div>
-            <button class="node active" data-key="openshield"><b>OpenShield</b><small>open source · Azure</small></button>
-            <button class="node" data-key="dusk"><b>DUSK</b><small>AI agent security</small></button>
-            <button class="node" data-key="iotsentinel"><b>IoTSentinel</b><small>edge · network ML</small></button>
-            <button class="node" data-key="breachlens"><b>BreachLens</b><small>full stack · data</small></button>
-          </div>
-          <div class="console-readout" aria-live="polite">
-            <div><div class="readout-label" id="constellationLabel">Open source infrastructure</div><div class="readout-title" id="constellationTitle">OpenShield · 55 stars · 69 forks</div></div>
-            <div class="readout-meta" id="constellationMeta">Python · Flask · React · Azure</div>
-          </div>
+        <div class="bento">
+          <article class="tile wide signal reveal">
+            <h3>What I bring to a team</h3>
+            <p>I translate technical requirements into reviewable software, test failure cases, document trade-offs and keep delivery evidence separate from marketing claims.</p>
+            <div class="command"><b>$ cat engineering-profile.txt</b><br>BACKEND&nbsp;&nbsp;&nbsp; Python services, Flask APIs and SQL workflows<br>CLOUD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Azure systems, containers and CI/CD<br>QUALITY&nbsp;&nbsp;&nbsp; Unit, integration and regression tests<br>SECURITY&nbsp;&nbsp; Posture controls and runtime policy gates</div>
+          </article>
+          <article class="tile narrow reveal">
+            <h3>Current direction</h3>
+            <div class="proof-list">
+              <div class="proof-row"><span>Primary</span><p>Graduate software engineering and Python backend roles</p></div>
+              <div class="proof-row"><span>Specialism</span><p>Cloud, platform, DevSecOps and security engineering</p></div>
+              <div class="proof-row"><span>Location</span><p>United Kingdom, open to relocation</p></div>
+            </div>
+          </article>
+          <article class="tile half reveal">
+            <h3>Working stack</h3>
+            <div class="stack-cloud" aria-label="Technical skills">
+              <span>Python</span><span>Flask</span><span>JavaScript</span><span>Angular</span><span>SQL</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Azure</span><span>Docker</span><span>Linux</span><span>GitHub Actions</span>
+            </div>
+          </article>
+          <article class="tile half reveal">
+            <h3>How I work</h3>
+            <div class="proof-list">
+              <div class="proof-row"><span>01</span><p>Understand the system and its failure boundaries.</p></div>
+              <div class="proof-row"><span>02</span><p>Implement the smallest defensible change.</p></div>
+              <div class="proof-row"><span>03</span><p>Test the normal path, degraded states and recovery.</p></div>
+              <div class="proof-row"><span>04</span><p>Record what is proven and what remains unverified.</p></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="work">
       <div class="shell">
-        <div class="section-head reveal"><h2>Systems you can inspect.</h2><p>Filter by domain, open the build notes and follow the public repository. Figures are tied to source evidence or explicitly labelled repository benchmarks.</p></div>
-        <div class="filter-row reveal" aria-label="Filter projects">
-          <button class="filter active" data-filter="all">All systems</button>
-          <button class="filter" data-filter="open-source">Open source</button>
-          <button class="filter" data-filter="ai">AI</button>
-          <button class="filter" data-filter="cloud">Cloud</button>
-          <button class="filter" data-filter="full-stack">Full stack</button>
-        </div>
-        <div class="project-grid">
-          <article class="project-card featured glass reveal" data-tags="open-source cloud full-stack security">
-            <div class="card-top"><span class="status">Core Contributor &amp; Infrastructure Lead</span><span class="card-number">OPENSHIELD</span></div>
-            <h3>Turn Azure posture findings into action.</h3>
-            <p>Open-source Azure CSPM for misconfigurations and quantum-unsafe cryptography. I built CI quality gates, connected the Flask API and React dashboard, and supported full-stack delivery. The project is currently migrating into the OWASP project ecosystem.</p>
-            <div class="chips"><span class="chip">55 stars</span><span class="chip">69 forks</span><span class="chip">OpenSSF Passing</span><span class="chip">80 Azure rules</span></div>
-            <div class="card-actions"><button class="btn detail-btn" data-project="openshield">Inspect build notes</button><a class="text-link" href="https://github.com/openshield-org/openshield" target="_blank" rel="noopener">Repository →</a></div>
-          </article>
-
-          <article class="project-card glass reveal" data-tags="open-source ai security">
-            <div class="card-top"><span class="status">Integrated upstream</span><span class="card-number">DUSK</span></div>
-            <h3>Gate anomalous AI agent actions.</h3>
-            <p>Co-built with Tanvir Farhad. DUSK evaluates proposed control-plane actions against behavioural baselines before they reach downstream systems.</p>
-            <div class="chips"><span class="chip">1.0 precision</span><span class="chip">1.0 recall</span><span class="chip">0.0 false-positive rate</span><span class="chip">Superlinked SIE</span></div>
-            <div class="card-actions"><button class="btn detail-btn" data-project="dusk">Inspect build notes</button><a class="text-link" href="https://github.com/superlinked/sie/tree/main/examples/agent-action-monitor" target="_blank" rel="noopener">Integration →</a></div>
-          </article>
-
-          <article class="project-card glass reveal" data-tags="ai security data">
-            <div class="card-top"><span class="status">Edge appliance</span><span class="card-number">IOTSENTINEL</span></div>
-            <h3>Learn a network without exporting it.</h3>
-            <p>Privacy-first Raspberry Pi appliance for device discovery, vulnerability posture, Zeek traffic analysis, River online learning and guarded firewall enforcement.</p>
-            <div class="chips"><span class="chip">1,263 tests</span><span class="chip">54 test files</span><span class="chip">68 to 81% module coverage</span></div>
-            <div class="card-actions"><button class="btn detail-btn" data-project="iotsentinel">Inspect build notes</button><a class="text-link" href="https://github.com/ritiksah141/iotsentinel" target="_blank" rel="noopener">Repository →</a></div>
-          </article>
-
-          <article class="project-card glass reveal" data-tags="full-stack security data">
-            <div class="card-top"><span class="status">Threat intelligence</span><span class="card-number">BREACHLENS</span></div>
-            <h3>Join breach context with action.</h3>
-            <p>Angular and Flask/MongoDB threat-intelligence platform with automated OSINT synchronisation, privacy-preserving exposed-data checks and analyst-facing workflows.</p>
-            <div class="chips"><span class="chip">889 tests</span><span class="chip">65 REST endpoints</span><span class="chip">Angular + Flask</span></div>
-            <div class="card-actions"><button class="btn detail-btn" data-project="breachlens">Inspect build notes</button><a class="text-link" href="https://github.com/ritiksah141/BreachLens" target="_blank" rel="noopener">Repository →</a></div>
-          </article>
-
-          <article class="project-card glass reveal" data-tags="full-stack cloud">
-            <div class="card-top"><span class="status">Team project</span><span class="card-number">LOCAL SERVICES</span></div>
-            <h3>Make local services easier to find.</h3>
-            <p>Professional Practice team project for service discovery and marketplace workflows. Included as supporting evidence rather than a headline project.</p>
-            <div class="chips"><span class="chip">Team delivery</span><span class="chip">Full stack</span><span class="chip">Professional Practice</span></div>
-            <div class="card-actions"><a class="text-link" href="https://github.com/Project-Professional-Practice-DHR/local-services-directory" target="_blank" rel="noopener">Repository →</a></div>
-          </article>
-
-          <article class="project-card glass reveal" data-tags="security data">
-            <div class="card-top"><span class="status">University coursework</span><span class="card-number">THREATVAULT</span></div>
-            <h3>Model security data with clear provenance.</h3>
-            <p>COM682 coursework exploring structured threat data and application security. Explicitly labelled as academic work.</p>
-            <div class="chips"><span class="chip">Coursework</span><span class="chip">Security</span><span class="chip">Data modelling</span></div>
-            <div class="card-actions"><a class="text-link" href="https://github.com/ritiksah141/ThreatVault" target="_blank" rel="noopener">Repository →</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="lab">
-      <div class="shell">
-        <div class="section-head reveal"><h2>Architecture playground.</h2><p>Choose a system and step through its data path. This is an explanatory model of the public architecture, not a live production console.</p></div>
-        <div class="playground glass reveal">
-          <div class="play-grid">
-            <div class="play-menu" role="tablist" aria-label="Choose a system">
-              <button class="play-tab active" role="tab" aria-selected="true" data-flow="openshield"><b>OpenShield</b><span>cloud posture path</span></button>
-              <button class="play-tab" role="tab" aria-selected="false" data-flow="dusk"><b>DUSK</b><span>agent action path</span></button>
-              <button class="play-tab" role="tab" aria-selected="false" data-flow="iotsentinel"><b>IoTSentinel</b><span>network signal path</span></button>
-              <button class="play-tab" role="tab" aria-selected="false" data-flow="breachlens"><b>BreachLens</b><span>threat data path</span></button>
-            </div>
-            <div class="flow-panel">
-              <div class="flow-toolbar"><div><p class="eyebrow">Interactive architecture</p><h3 id="flowTitle">OpenShield posture pipeline</h3></div><div class="flow-actions"><button class="icon-btn" id="flowBack" aria-label="Previous architecture step">←</button><button class="icon-btn" id="flowNext" aria-label="Next architecture step">→</button></div></div>
-              <div class="flow-track" id="flowTrack"></div>
-              <div class="flow-output" aria-live="polite"><div><span class="readout-label" id="flowLabel">Step 1 of 5</span><p id="flowDescription">Connect to an Azure environment using scoped credentials.</p></div><span class="pulse" aria-hidden="true"></span></div>
-            </div>
+        <div class="section-intro reveal">
+          <p class="section-kicker">Selected engineering work</p>
+          <div>
+            <h2>Systems built around real operating problems.</h2>
+            <p>Four projects show the breadth of the work. Each one links to public evidence so the architecture, limitations and contribution history can be inspected directly.</p>
           </div>
+        </div>
+
+        <div class="projects">
+          <article class="project reveal">
+            <span class="project-index">01 / 04</span>
+            <div><h3>OpenShield</h3><p class="project-role">API & AI maintainer</p></div>
+            <div class="project-copy"><p>An open-source Azure cloud-security platform that identifies misconfigurations and quantum-unsafe cryptography, maps findings to compliance frameworks and provides remediation guidance.</p><div class="project-tags"><span>Python</span><span>Flask</span><span>Azure</span><span>CI/CD</span><span>Backend tests</span></div></div>
+            <div class="project-links"><a href="https://github.com/OWASP/openshield" target="_blank" rel="noopener">Repository</a><a href="https://github.com/OWASP/openshield/blob/dev/MAINTAINERS.md" target="_blank" rel="noopener">Maintainer record</a></div>
+          </article>
+
+          <article class="project reveal">
+            <span class="project-index">02 / 04</span>
+            <div><h3>DUSK</h3><p class="project-role">Co-builder</p></div>
+            <div class="project-copy"><p>A vendor-neutral runtime gate that evaluates proposed AI-agent actions against behavioural history before those actions reach protected systems, with observable watch and enforce paths.</p><div class="project-tags"><span>Python</span><span>AI-agent security</span><span>Policy gates</span><span>Docker</span><span>Observability</span></div></div>
+            <div class="project-links"><a href="https://github.com/ShieldTech-Ltd/DUSK" target="_blank" rel="noopener">Repository</a><a href="https://github.com/superlinked/sie/tree/main/examples/agent-action-monitor" target="_blank" rel="noopener">Superlinked SIE example</a></div>
+          </article>
+
+          <article class="project reveal">
+            <span class="project-index">03 / 04</span>
+            <div><h3>IoTSentinel</h3><p class="project-role">Solo final-year project</p></div>
+            <div class="project-copy"><p>A local-first Raspberry Pi appliance for device discovery, vulnerability posture, traffic analysis and plain-English alert explanations across home networks.</p><div class="project-tags"><span>Python</span><span>Raspberry Pi</span><span>Network monitoring</span><span>Online learning</span><span>Testing</span></div></div>
+            <div class="project-links"><a href="https://iotsentinel.org/" target="_blank" rel="noopener">Project website</a><a href="https://github.com/ritiksah141/iotsentinel" target="_blank" rel="noopener">Repository</a></div>
+          </article>
+
+          <article class="project reveal">
+            <span class="project-index">04 / 04</span>
+            <div><h3>BreachLens</h3><p class="project-role">Full-stack engineering</p></div>
+            <div class="project-copy"><p>A threat-intelligence platform for breach tracking, compromised-asset monitoring and privacy-preserving exposure checks, backed by an automated OSINT workflow.</p><div class="project-tags"><span>Flask</span><span>Angular</span><span>MongoDB</span><span>Redis</span><span>Docker</span></div></div>
+            <div class="project-links"><a href="https://github.com/ritiksah141/BreachLens" target="_blank" rel="noopener">Repository</a></div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="evidence">
       <div class="shell">
-        <div class="section-head reveal"><h2>Evidence, not decoration.</h2><p>Public adoption, upstream integration, automated testing, education and real work experience form the proof layer behind the playground.</p></div>
+        <div class="section-intro reveal">
+          <p class="section-kicker">Evidence layer</p>
+          <div>
+            <h2>Proof before polish.</h2>
+            <p>The strongest claims on this portfolio point to public records, working repositories or confirmed recognition. Repository benchmarks remain labelled as benchmarks, not production guarantees.</p>
+          </div>
+        </div>
+
         <div class="evidence-grid">
-          <div class="evidence-card glass reveal">
-            <h3>External signals</h3>
-            <div class="evidence-row"><b>OPEN SOURCE</b><span>OpenShield has public adoption, external contributors and an OpenSSF Best Practices Passing badge.</span></div>
-            <div class="evidence-row"><b>UPSTREAM</b><span>DUSK ships as a self-contained agent-action-monitor example inside Superlinked's public SIE repository.</span></div>
-            <div class="evidence-row"><b>TESTING</b><span>IoTSentinel contains 1,263 tests across 54 files. BreachLens contains 889 automated tests.</span></div>
-            <div class="evidence-row"><b>ACADEMIC</b><span>Dean's Award in Years 1 and 2, expected First-Class Honours and winner at QAHE TechFest 2026.</span></div>
-          </div>
-          <div class="evidence-card glass reveal">
-            <h3>Journey</h3>
-            <div class="timeline">
-              <article><time>2026 TO PRESENT</time><h4>Open source and AI security work</h4><p>Infrastructure leadership on OpenShield and joint development of DUSK, including its Superlinked SIE integration.</p></article>
-              <article><time>2023 TO PRESENT</time><h4>BSc (Hons) Computing Systems</h4><p>Ulster University London. Expected First-Class Honours, Dean's Award in Years 1 and 2.</p></article>
-              <article><time>3 AUGUST 2026</time><h4>Winner, QAHE TechFest 2026</h4><p>Ulster Project Showcase and Poster Exhibition.</p></article>
-              <article><time>DECEMBER 2020 TO JULY 2022</time><h4>Database Administrator</h4><p>Part-time and hybrid role at Arunima Secondary School, Kathmandu.</p></article>
+          <article class="evidence-card reveal">
+            <h3>Public engineering records</h3>
+            <p>External references that clarify ownership and contribution scope.</p>
+            <div class="record"><div><b>OpenShield API & AI maintainer</b><small>API, AI layer, CI and infrastructure review, backend tests</small></div><a href="https://github.com/OWASP/openshield/blob/dev/MAINTAINERS.md" target="_blank" rel="noopener">Inspect</a></div>
+            <div class="record"><div><b>DUSK in Superlinked SIE</b><small>Self-contained agent-action-monitor example with credits and limitations</small></div><a href="https://github.com/superlinked/sie/tree/main/examples/agent-action-monitor" target="_blank" rel="noopener">Inspect</a></div>
+            <div class="record"><div><b>Open repositories</b><small>Implementation history, tests, documentation and architecture decisions</small></div><a href="https://github.com/ritiksah141" target="_blank" rel="noopener">Inspect</a></div>
+          </article>
+
+          <article class="evidence-card reveal">
+            <h3>Development path</h3>
+            <div class="journey">
+              <div class="journey-item"><time>2020–2022</time><h4>Database administration</h4><p>Maintained school records, supported retrieval and checked data consistency.</p></div>
+              <div class="journey-item"><time>2023–2026</time><h4>BSc Computing Systems</h4><p>Built foundations across software, cloud, networking, databases, AI and security.</p></div>
+              <div class="journey-item"><time>2026</time><h4>Open-source maintenance</h4><p>Maintaining API and AI areas in OpenShield while contributing delivery and test evidence.</p></div>
+              <div class="journey-item"><time>Now</time><h4>Graduate engineering roles</h4><p>Targeting software, backend, cloud/platform and suitable security-engineering teams.</p></div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="shell contact-card glass reveal">
-        <div><p class="eyebrow">London, UK · Open to graduate technology opportunities</p><h2>Bring me a system worth understanding.</h2><p>Interested in software development, cloud, AI, full-stack systems, data and security. The role can vary. The standard for careful engineering does not.</p></div>
-        <div class="contact-links"><a href="mailto:ritiksah141@gmail.com">ritiksah141@gmail.com</a><a href="https://www.linkedin.com/in/ritik-sah-858015335/" target="_blank" rel="noopener">LinkedIn profile</a><a href="https://github.com/ritiksah141" target="_blank" rel="noopener">GitHub profile</a></div>
+    <section class="contact" id="contact">
+      <div class="shell reveal">
+        <h2>Build something dependable.</h2>
+        <p>I am open to UK graduate and junior roles where I can contribute to software delivery, learn through code review and take increasing responsibility for production systems.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:ritiksah141@gmail.com">Start a conversation</a>
+          <a class="button" href="https://www.linkedin.com/in/ritik-sah-858015335/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button" href="https://github.com/ritiksah141" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </div>
     </section>
-
-    <footer class="shell site-footer"><span>© 2026 Ritik Sah</span><span>Cloud · AI · Full stack · Security · Data</span></footer>
   </main>
 
-  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-box glass" id="modalBox">
-      <div class="modal-head"><div><p class="eyebrow" id="modalEyebrow"></p><h3 class="modal-title" id="modalTitle"></h3></div><button class="modal-close" id="modalClose" aria-label="Close project details">×</button></div>
-      <p class="modal-summary" id="modalSummary"></p>
-      <div class="modal-section"><h4>Build decisions</h4><ul class="modal-list" id="modalDecisions"></ul></div>
-      <div class="modal-section"><h4>Verified evidence</h4><div class="chips" id="modalEvidence"></div></div>
-      <div class="modal-section"><a class="btn primary" id="modalLink" target="_blank" rel="noopener">Open repository</a></div>
-    </div>
-  </div>
+  <footer>
+    <div class="shell footer-row"><span>Ritik Sah · London, United Kingdom</span><span>Software · Cloud · Security</span></div>
+  </footer>
 
   <script>
-    const systems = {
-      openshield: {
-        label: 'Open source infrastructure',
-        title: 'OpenShield · 55 stars · 69 forks',
-        meta: 'Python · Flask · React · Azure',
-        flowTitle: 'OpenShield posture pipeline',
-        flow: [
-          ['Connect', 'Scoped Azure access', 'Connect to an Azure environment using scoped credentials.'],
-          ['Discover', 'Resource inventory', 'Enumerate supported resource types and configuration state.'],
-          ['Evaluate', '80 security rules', 'Evaluate cloud posture and identify actionable findings.'],
-          ['Explain', 'Evidence and context', 'Attach affected resources, reasoning and remediation context.'],
-          ['Present', 'API and dashboard', 'Deliver findings through the Flask API and React dashboard.']
-        ]
-      },
-      dusk: {
-        label: 'AI agent action control',
-        title: 'DUSK · Superlinked SIE integration',
-        meta: 'Python · Behavioural baselines · MITRE',
-        flowTitle: 'DUSK action evaluation',
-        flow: [
-          ['Observe', 'Action proposal', 'Capture a proposed agent action before downstream execution.'],
-          ['Represent', 'Action features', 'Represent the action using behavioural and contextual signals.'],
-          ['Compare', 'Baseline distance', 'Compare the proposal with established behavioural baselines.'],
-          ['Map', 'ATT&amp;CK and ATLAS', 'Map anomalous behaviour to relevant adversarial techniques.'],
-          ['Gate', 'Allow or refuse', 'Return a decision before the action reaches the target system.']
-        ]
-      },
-      iotsentinel: {
-        label: 'Privacy-first edge security',
-        title: 'IoTSentinel · 1,263 tests',
-        meta: 'Raspberry Pi · Zeek · River ML · Linux',
-        flowTitle: 'IoTSentinel network signal path',
-        flow: [
-          ['Observe', 'Network metadata', 'Collect device and traffic metadata locally on the appliance.'],
-          ['Parse', 'Zeek logs', 'Transform Zeek outputs into structured network events.'],
-          ['Learn', 'River online model', 'Update an online behavioural model as network conditions change.'],
-          ['Explain', 'Risk evidence', 'Attach contributing signals to each anomalous event.'],
-          ['Respond', 'Guarded controls', 'Surface alerts and apply guarded firewall enforcement when configured.']
-        ]
-      },
-      breachlens: {
-        label: 'Threat intelligence workflow',
-        title: 'BreachLens · 889 tests · 65 endpoints',
-        meta: 'Angular · Flask · MongoDB · OSINT',
-        flowTitle: 'BreachLens threat data path',
-        flow: [
-          ['Collect', 'OSINT sources', 'Synchronise supported public intelligence sources.'],
-          ['Normalize', 'Common records', 'Normalize varying source formats into consistent records.'],
-          ['Store', 'MongoDB', 'Persist structured threat and breach context for retrieval.'],
-          ['Serve', '65 REST endpoints', 'Expose authenticated workflows through the Flask API.'],
-          ['Explore', 'Angular interface', 'Present searchable context and privacy-preserving exposed-data checks.']
-        ]
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navLinks = [...document.querySelectorAll('.nav a')];
+
+    const setActive = () => {
+      const marker = window.scrollY + window.innerHeight * 0.35;
+      let current = 'home';
+      for (const section of sections) {
+        if (section.offsetTop <= marker) current = section.id;
       }
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current}`));
     };
 
-    const projectDetails = {
-      openshield: {
-        eyebrow: 'Open source · Azure cloud posture',
-        title: 'OpenShield',
-        summary: 'An open-source Azure Cloud Security Posture Management platform with public adoption and external contributors.',
-        decisions: ['CI quality gates protect changes before integration.', 'Flask API and React dashboard are connected as one delivery surface.', 'Findings retain affected-resource context and remediation guidance.'],
-        evidence: ['55 GitHub stars', '69 forks', 'OpenSSF Passing badge', '80 Azure rules'],
-        link: 'https://github.com/openshield-org/openshield'
-      },
-      dusk: {
-        eyebrow: 'AI agent security · Joint work',
-        title: 'DUSK',
-        summary: 'A behavioural gate for proposed AI agent actions, co-built with Tanvir Farhad and integrated into Superlinked SIE.',
-        decisions: ['Evaluate before downstream action execution.', 'Compare behaviour with contextual baselines.', 'Map findings to MITRE ATT&amp;CK and ATLAS.'],
-        evidence: ['1.0 precision', '1.0 recall', '0.0 false-positive rate', 'Superlinked SIE'],
-        link: 'https://github.com/ShieldTech-Ltd/DUSK'
-      },
-      iotsentinel: {
-        eyebrow: 'Edge security · Network ML',
-        title: 'IoTSentinel',
-        summary: 'A privacy-first Raspberry Pi network-security appliance that keeps traffic analysis and online learning local.',
-        decisions: ['Use Zeek for structured network telemetry.', 'Use River for incremental learning under changing conditions.', 'Keep enforcement guarded and explainable.'],
-        evidence: ['1,263 tests', '54 test files', '68 to 81% module coverage'],
-        link: 'https://github.com/ritiksah141/iotsentinel'
-      },
-      breachlens: {
-        eyebrow: 'Threat intelligence · Full stack',
-        title: 'BreachLens',
-        summary: 'A full-stack threat-intelligence platform joining OSINT synchronisation, breach context and analyst workflows.',
-        decisions: ['Normalize varied source records before presentation.', 'Keep exposed-data checks privacy preserving.', 'Separate Angular interaction from Flask data workflows.'],
-        evidence: ['889 automated tests', '65 REST endpoints', 'Angular + Flask + MongoDB'],
-        link: 'https://github.com/ritiksah141/BreachLens'
-      }
-    };
-
-    const readout = {
-      label: document.getElementById('constellationLabel'),
-      title: document.getElementById('constellationTitle'),
-      meta: document.getElementById('constellationMeta')
-    };
-    document.querySelectorAll('.node').forEach(node => {
-      node.addEventListener('click', () => {
-        document.querySelectorAll('.node').forEach(item => item.classList.remove('active'));
-        node.classList.add('active');
-        const system = systems[node.dataset.key];
-        readout.label.textContent = system.label;
-        readout.title.textContent = system.title;
-        readout.meta.textContent = system.meta;
-      });
-    });
-
-    document.querySelectorAll('.filter').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.filter').forEach(item => item.classList.remove('active'));
-        button.classList.add('active');
-        const filter = button.dataset.filter;
-        document.querySelectorAll('.project-card').forEach(card => {
-          const visible = filter === 'all' || card.dataset.tags.split(' ').includes(filter);
-          card.classList.toggle('hidden', !visible);
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
         });
-      });
-    });
-
-    let activeFlow = 'openshield';
-    let activeStep = 0;
-    const flowTrack = document.getElementById('flowTrack');
-    const flowTitle = document.getElementById('flowTitle');
-    const flowLabel = document.getElementById('flowLabel');
-    const flowDescription = document.getElementById('flowDescription');
-
-    function renderFlow() {
-      const system = systems[activeFlow];
-      flowTitle.textContent = system.flowTitle;
-      flowTrack.innerHTML = system.flow.map((step, index) => `
-        <div class="flow-step ${index === activeStep ? 'active' : ''} ${index < activeStep ? 'done' : ''}">
-          <span class="step-index">0${index + 1}</span><b>${step[0]}</b><small>${step[1]}</small>
-        </div>`).join('');
-      flowLabel.textContent = `Step ${activeStep + 1} of ${system.flow.length}`;
-      flowDescription.textContent = system.flow[activeStep][2];
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(item => revealObserver.observe(item));
+    } else {
+      document.querySelectorAll('.reveal').forEach(item => item.classList.add('visible'));
     }
-    document.querySelectorAll('.play-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.play-tab').forEach(item => { item.classList.remove('active'); item.setAttribute('aria-selected', 'false'); });
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-        activeFlow = tab.dataset.flow;
-        activeStep = 0;
-        renderFlow();
-      });
-    });
-    document.getElementById('flowNext').addEventListener('click', () => { activeStep = (activeStep + 1) % systems[activeFlow].flow.length; renderFlow(); });
-    document.getElementById('flowBack').addEventListener('click', () => { activeStep = (activeStep - 1 + systems[activeFlow].flow.length) % systems[activeFlow].flow.length; renderFlow(); });
-    renderFlow();
 
-    const modal = document.getElementById('projectModal');
-    const modalBox = document.getElementById('modalBox');
-    const closeButton = document.getElementById('modalClose');
-    let returnFocus = null;
-    document.querySelectorAll('.detail-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const project = projectDetails[button.dataset.project];
-        returnFocus = button;
-        document.getElementById('modalEyebrow').textContent = project.eyebrow;
-        document.getElementById('modalTitle').textContent = project.title;
-        document.getElementById('modalSummary').textContent = project.summary;
-        document.getElementById('modalDecisions').innerHTML = project.decisions.map(item => `<li>${item}</li>`).join('');
-        document.getElementById('modalEvidence').innerHTML = project.evidence.map(item => `<span class="chip">${item}</span>`).join('');
-        document.getElementById('modalLink').href = project.link;
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        closeButton.focus();
-      });
-    });
-    function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; if (returnFocus) returnFocus.focus(); }
-    closeButton.addEventListener('click', closeModal);
-    modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
-    document.addEventListener('keydown', event => {
-      if (!modal.classList.contains('open')) return;
-      if (event.key === 'Escape') closeModal();
-      if (event.key === 'Tab') {
-        const focusable = [...modalBox.querySelectorAll('button, a[href]')];
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-        if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-      }
-    });
-
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
-      });
-    }, { threshold: .08 });
-    document.querySelectorAll('.reveal').forEach(item => revealObserver.observe(item));
-
-    const sections = [...document.querySelectorAll('section[id]')];
-    const navLinks = [...document.querySelectorAll('.side-nav a[data-section]')];
-    const navObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach(link => link.classList.toggle('active', link.dataset.section === entry.target.id));
-      });
-    }, { rootMargin: '-38% 0px -52% 0px' });
-    sections.forEach(section => navObserver.observe(section));
+    addEventListener('scroll', setActive, { passive: true });
+    addEventListener('resize', setActive);
+    setActive();
   </script>
 </body>
 </html>
