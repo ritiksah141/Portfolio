@@ -1,583 +1,101 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ritik Sah is a graduate software engineer building dependable Python, cloud and security systems.">
-  <meta property="og:title" content="Ritik Sah | Software, Cloud & Security Engineer">
-  <meta property="og:description" content="Evidence-led engineering across Python backends, Azure, AI-agent security and open-source systems.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://portfolio-lilac-ten-41.vercel.app/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#060806">
-  <title>Ritik Sah | Software, Cloud & Security Engineer</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23060806'/%3E%3Cpath d='M17 18h20c8 0 12 4 12 10 0 5-3 8-8 9l10 11H39L29 38v10H17V18Zm12 9v5h8c2 0 3-1 3-3s-1-2-3-2h-8Z' fill='%23f4f7f2'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #060806;
-      --ink-soft: #0b100c;
-      --panel: rgba(17, 23, 18, .74);
-      --panel-solid: #111712;
-      --paper: #f4f7f2;
-      --muted: #9ca79f;
-      --line: rgba(225, 238, 227, .16);
-      --line-strong: rgba(225, 238, 227, .3);
-      --signal: #57f287;
-      --signal-deep: #1d8f4c;
-      --ice: #9bd8ff;
-      --amber: #ff9f62;
-      --max: 1320px;
-      --radius: 24px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: Inter, system-ui, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -3;
-      background:
-        radial-gradient(circle at 50% 8%, rgba(87, 242, 135, .08), transparent 28%),
-        linear-gradient(180deg, #080b08 0%, var(--ink) 42%, #050705 100%);
-    }
-    a { color: inherit; }
-    button { font: inherit; }
-    ::selection { background: var(--signal); color: var(--ink); }
-    :focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
-    .skip-link {
-      position: fixed;
-      left: 18px;
-      top: -70px;
-      z-index: 200;
-      padding: 10px 14px;
-      background: var(--paper);
-      color: var(--ink);
-      border-radius: 10px;
-    }
-    .skip-link:focus { top: 18px; }
-    .shell { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
-    .mono { font-family: "DM Mono", monospace; }
-    .muted { color: var(--muted); }
-
-    .site-header {
-      position: fixed;
-      inset: 20px 0 auto;
-      z-index: 100;
-      pointer-events: none;
-    }
-    .nav-wrap { display: flex; justify-content: center; }
-    .nav {
-      pointer-events: auto;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 6px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      background: rgba(8, 11, 8, .78);
-      box-shadow: 0 16px 50px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
-      backdrop-filter: blur(18px);
-    }
-    .nav a {
-      padding: 10px 16px;
-      border-radius: 999px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      transition: background .2s ease, color .2s ease;
-    }
-    .nav a:hover, .nav a.active { background: var(--paper); color: var(--ink); }
-    .brand {
-      position: fixed;
-      top: 28px;
-      left: max(24px, calc((100vw - var(--max)) / 2));
-      z-index: 110;
-      color: var(--paper);
-      text-decoration: none;
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -.07em;
-    }
-    .availability {
-      position: fixed;
-      top: 30px;
-      right: max(24px, calc((100vw - var(--max)) / 2));
-      z-index: 110;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font: 11px "DM Mono", monospace;
-    }
-    .availability i { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 18px var(--signal); }
-
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: grid;
-      align-items: center;
-      overflow: hidden;
-      padding: 112px 0 80px;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -15vw;
-      width: 130vw;
-      aspect-ratio: 3.6 / 1;
-      translate: -50% 0;
-      border: 2px solid rgba(87, 242, 135, .8);
-      border-radius: 50%;
-      background: radial-gradient(ellipse at 50% 0%, rgba(87,242,135,.2), transparent 45%);
-      box-shadow: 0 -2px 22px rgba(87, 242, 135, .45), 0 -40px 100px rgba(87,242,135,.12);
-      pointer-events: none;
-    }
-    .star-field {
-      position: absolute;
-      inset: 0;
-      opacity: .55;
-      background-image:
-        radial-gradient(circle at 12% 26%, white 0 1px, transparent 2px),
-        radial-gradient(circle at 74% 19%, white 0 1px, transparent 2px),
-        radial-gradient(circle at 85% 58%, var(--signal) 0 1px, transparent 2px),
-        radial-gradient(circle at 32% 73%, white 0 1px, transparent 2px),
-        radial-gradient(circle at 57% 39%, rgba(255,255,255,.5) 0 1px, transparent 2px);
-      background-size: 330px 260px, 470px 380px, 390px 310px, 520px 420px, 440px 350px;
-      mask-image: linear-gradient(black, transparent 84%);
-    }
-    .hero-layout { position: relative; z-index: 2; }
-    .hero-note {
-      position: absolute;
-      top: 10%;
-      left: 0;
-      width: 220px;
-      color: var(--muted);
-      font: 11px/1.7 "DM Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    .hero-note.right { left: auto; right: 0; top: auto; bottom: 14%; }
-    .hero-title {
-      width: min(980px, 82vw);
-      margin: 0 auto;
-      text-align: center;
-      font-size: clamp(62px, 10.5vw, 156px);
-      font-weight: 900;
-      line-height: .79;
-      letter-spacing: -.085em;
-      text-transform: uppercase;
-      text-wrap: balance;
-    }
-    .hero-title span { display: block; }
-    .hero-title .outline { color: transparent; -webkit-text-stroke: 1px rgba(244,247,242,.55); }
-    .hero-subtitle {
-      max-width: 690px;
-      margin: 38px auto 0;
-      color: #c9d1cb;
-      text-align: center;
-      font-size: clamp(16px, 1.7vw, 20px);
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 19px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      background: rgba(11,16,12,.7);
-      color: var(--paper);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-    .button:hover { transform: translateY(-2px); border-color: var(--signal); }
-    .button.primary { background: var(--signal); color: #041008; border-color: var(--signal); }
-    .hero-index {
-      position: absolute;
-      left: 50%;
-      bottom: 22px;
-      z-index: 3;
-      translate: -50% 0;
-      color: var(--muted);
-      font: 10px "DM Mono", monospace;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .ticker { overflow: hidden; border-block: 1px solid var(--line); background: #090d0a; }
-    .ticker-track {
-      width: max-content;
-      display: flex;
-      gap: 34px;
-      padding: 16px 0;
-      animation: ticker 28s linear infinite;
-      color: #b8c2ba;
-      font: 12px "DM Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    .ticker-track span::after { content: "◆"; margin-left: 34px; color: var(--signal); }
-
-    section { padding: 110px 0; border-top: 1px solid var(--line); }
-    .section-intro { display: grid; grid-template-columns: .7fr 1.3fr; gap: 60px; margin-bottom: 46px; }
-    .section-kicker { margin: 8px 0 0; color: var(--signal); font: 11px "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
-    .section-intro h2 { max-width: 840px; margin: 0; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -.065em; }
-    .section-intro p { max-width: 690px; margin: 22px 0 0; color: var(--muted); font-size: 17px; }
-
-    .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-    .tile {
-      position: relative;
-      overflow: hidden;
-      min-height: 270px;
-      padding: clamp(24px, 4vw, 42px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
-    }
-    .tile h3 { margin: 0; font-size: clamp(26px, 3vw, 42px); line-height: 1; letter-spacing: -.045em; }
-    .tile p { max-width: 620px; margin: 18px 0 0; color: var(--muted); }
-    .tile.wide { grid-column: span 7; }
-    .tile.narrow { grid-column: span 5; }
-    .tile.half { grid-column: span 6; }
-    .tile.signal {
-      background:
-        radial-gradient(circle at 78% 20%, rgba(87,242,135,.24), transparent 34%),
-        linear-gradient(145deg, #121a13, #0a0e0b);
-    }
-    .command {
-      margin: 28px 0 0;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(0,0,0,.36);
-      color: #cbd4cd;
-      font: 13px/1.85 "DM Mono", monospace;
-    }
-    .command b { color: var(--signal); font-weight: 500; }
-    .proof-list { display: grid; gap: 14px; margin-top: 28px; }
-    .proof-row { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
-    .proof-row span { color: var(--signal); font: 11px "DM Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
-    .proof-row p { margin: 0; color: #dbe1dc; font-size: 14px; }
-    .stack-cloud { display: flex; flex-wrap: wrap; align-content: end; gap: 8px; height: 150px; margin-top: 28px; }
-    .stack-cloud span { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: #c9d1cb; font: 11px "DM Mono", monospace; }
-
-    .projects { display: grid; gap: 18px; }
-    .project {
-      display: grid;
-      grid-template-columns: 90px 1fr 1.1fr auto;
-      gap: 28px;
-      align-items: center;
-      min-height: 210px;
-      padding: 26px 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.025);
-      transition: transform .22s ease, border-color .22s ease, background .22s ease;
-    }
-    .project:hover { transform: translateY(-4px); border-color: rgba(87,242,135,.45); background: rgba(87,242,135,.035); }
-    .project-index { color: #5f6d62; font: 13px "DM Mono", monospace; }
-    .project h3 { margin: 0; font-size: clamp(30px, 4vw, 58px); line-height: .9; letter-spacing: -.06em; }
-    .project-role { margin: 12px 0 0; color: var(--signal); font: 11px "DM Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
-    .project-copy p { margin: 0; color: var(--muted); font-size: 15px; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
-    .project-tags span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 999px; color: #bec7c0; font: 10px "DM Mono", monospace; }
-    .project-links { display: flex; flex-direction: column; gap: 8px; min-width: 122px; }
-    .project-links a { text-decoration: none; font-size: 12px; font-weight: 700; }
-    .project-links a:hover { color: var(--signal); }
-
-    .evidence-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px; }
-    .evidence-card { padding: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
-    .evidence-card h3 { margin: 0; font-size: 28px; letter-spacing: -.04em; }
-    .evidence-card > p { color: var(--muted); }
-    .record { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 19px 0; border-top: 1px solid var(--line); }
-    .record:first-of-type { margin-top: 24px; }
-    .record b { display: block; font-size: 14px; }
-    .record small { color: var(--muted); }
-    .record a { color: var(--signal); text-decoration: none; font: 11px "DM Mono", monospace; }
-    .journey { display: grid; gap: 0; margin-top: 24px; }
-    .journey-item { position: relative; padding: 0 0 28px 30px; border-left: 1px solid var(--line-strong); }
-    .journey-item:last-child { padding-bottom: 0; }
-    .journey-item::before { content: ""; position: absolute; left: -5px; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 18px rgba(87,242,135,.45); }
-    .journey-item time { color: var(--signal); font: 10px "DM Mono", monospace; }
-    .journey-item h4 { margin: 5px 0; font-size: 17px; }
-    .journey-item p { margin: 0; color: var(--muted); font-size: 13px; }
-
-    .contact { position: relative; overflow: hidden; text-align: center; padding: 130px 0 145px; }
-    .contact::before { content: ""; position: absolute; left: 50%; bottom: -230px; width: 900px; height: 430px; translate: -50% 0; border-radius: 50%; background: rgba(87,242,135,.14); filter: blur(80px); }
-    .contact h2 { position: relative; max-width: 1000px; margin: 0 auto; font-size: clamp(54px, 9vw, 132px); line-height: .82; letter-spacing: -.08em; text-transform: uppercase; }
-    .contact p { position: relative; max-width: 650px; margin: 28px auto 0; color: var(--muted); }
-    .contact .hero-actions { position: relative; }
-    footer { padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); }
-    .footer-row { display: flex; justify-content: space-between; gap: 20px; font: 11px "DM Mono", monospace; }
-    .footer-row a { text-decoration: none; }
-
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    @keyframes ticker { to { transform: translateX(-50%); } }
-
-    @media (max-width: 980px) {
-      .availability { display: none; }
-      .hero-note { display: none; }
-      .section-intro { grid-template-columns: 1fr; gap: 16px; }
-      .tile.wide, .tile.narrow, .tile.half { grid-column: span 12; }
-      .project { grid-template-columns: 54px 1fr; }
-      .project-copy, .project-links { grid-column: 2; }
-      .project-links { flex-direction: row; }
-      .evidence-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 720px) {
-      .shell { width: min(100% - 28px, var(--max)); }
-      .site-header { inset: auto 0 14px; }
-      .nav { width: calc(100% - 28px); justify-content: space-between; }
-      .nav a { padding: 9px 11px; font-size: 11px; }
-      .brand { top: 19px; left: 18px; }
-      .hero { padding-top: 100px; }
-      .hero-title { width: 100%; font-size: clamp(54px, 17vw, 88px); }
-      .hero-title span { line-height: .86; }
-      section { padding: 82px 0; }
-      .project { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
-      .project-index, .project-copy, .project-links { grid-column: 1; }
-      .project-links { flex-wrap: wrap; }
-      .proof-row { grid-template-columns: 1fr; gap: 7px; }
-      .footer-row { flex-direction: column; padding-bottom: 80px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
-    }
-  </style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Ritik Sah builds reliable software, cloud platforms, AI-assisted systems and security products.">
+  <meta property="og:title" content="Ritik Sah | Software, Cloud & Security Engineer"><meta property="og:description" content="Evidence-led engineering across open source, Azure, full-stack systems and AI security."><meta property="og:type" content="website"><meta name="theme-color" content="#0a0a0a">
+  <title>Ritik Sah | Software, Cloud & Security Engineer</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=7"><link rel="stylesheet" href="reference.css?v=7"><link rel="stylesheet" href="details.css?v=8"><link rel="stylesheet" href="fidelity.css?v=11"><link rel="stylesheet" href="refinement.css?v=27"><script src="data.js?v=3" defer></script><script src="github-contributions-data.js" defer></script><script src="script.js?v=9" defer></script><script src="interactions.js?v=2" defer></script><script src="skill-icons.js?v=2" defer></script><script src="terminal-playground.js?v=2" defer></script><script src="github-contributions.js" defer></script><script src="refinement.js?v=3" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <a class="brand" href="#home" aria-label="Ritik Sah home">RS</a>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#evidence">Evidence</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-  <div class="availability"><i aria-hidden="true"></i>Open to UK graduate roles</div>
-
+  <a class="skip-link" href="#main">Skip to content</a><div class="noise" aria-hidden="true"></div>
+  <header class="site-header"><a class="mark logo-mark" href="#top" aria-label="Ritik Sah home"><img src="assets/rs-monogram-source.png" alt="" width="90" height="90"></a><nav class="pill-nav" aria-label="Primary navigation"><a class="active" href="#top">Home</a><div class="about-menu"><button id="about-toggle" aria-expanded="false" aria-controls="about-links">About <span class="dropdown-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></span></button><div id="about-links" hidden><a href="#about">About me</a><a href="#expertise">Expertise</a><a href="#recognition">Recognition</a><a href="#journey">Journey</a></div></div><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button></header>
   <main id="main">
-    <section class="hero" id="home">
-      <div class="star-field" aria-hidden="true"></div>
-      <div class="shell hero-layout">
-        <p class="hero-note">Ritik Sah<br>London, United Kingdom<br>Final-year Computing Systems</p>
-        <p class="hero-note right">Python backends<br>Azure cloud systems<br>Security by design</p>
-        <h1 class="hero-title">
-          <span>Software</span>
-          <span class="outline">Cloud + Security</span>
-          <span>Engineer</span>
-        </h1>
-        <p class="hero-subtitle">I build dependable software for cloud and security use cases, with evidence in the code, tests and delivery path.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#work">Explore selected work</a>
-          <a class="button" href="https://github.com/ritiksah141" target="_blank" rel="noopener">GitHub profile</a>
-          <a class="button" href="mailto:ritiksah141@gmail.com">Email me</a>
-        </div>
-      </div>
-      <div class="hero-index">Scroll to inspect the systems</div>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-stars" aria-hidden="true"></div><div class="hero-meteors" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="hero-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="hero-side hero-side-left">Ritik Sah · building<br>reliable software,<br>cloud platforms and<br>security systems.</p>
+      <div class="hero-core"><h1 id="hero-title" aria-label="Cloud and web software engineer"><span class="hero-row">Cloud &amp; web <a class="inline-social GitHub" href="https://github.com/ritiksah141" aria-label="GitHub" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.3-2-1-2.5 3-.3 6-1.5 6-6a5 5 0 0 0-1.5-3.5c.2-1 .2-2-.2-3-2 0-3 1-3.5 1.5a13 13 0 0 0-6 0C8 4 7 3 5 3c-.4 1-.4 2-.2 3A5 5 0 0 0 3.3 9.5c0 4.5 3 5.7 6 6-.7.5-1 1.5-1 2.5v4"/></svg></a></span><span class="hero-row"><a class="inline-social LinkedIn" href="https://www.linkedin.com/in/ritik-sah-858015335/" aria-label="LinkedIn" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="8" width="4" height="13"/><circle cx="5" cy="3.5" r="2"/><path d="M11 21V8h4v2c3-4 7-2 7 3v8h-4v-8c0-2-3-2-3 0v8z"/></svg></a> Software</span><span class="hero-row">Engineer <a class="inline-social Email" href="mailto:ritiksah141@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg></a></span></h1><div class="hero-actions"><a class="button resume-button" href="resume/">View Resume <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div></div>
+      <p class="hero-side hero-side-right">Python, Azure and full-stack<br>engineering, with security<br>built into the system.</p>
+      <div class="signal-horizon" aria-hidden="true"><span></span></div>
     </section>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Python</span><span>REST APIs</span><span>Microsoft Azure</span><span>Docker</span><span>Linux</span><span>GitHub Actions</span><span>Automated testing</span><span>Application security</span>
-        <span>Python</span><span>REST APIs</span><span>Microsoft Azure</span><span>Docker</span><span>Linux</span><span>GitHub Actions</span><span>Automated testing</span><span>Application security</span>
+    <section class="section shell" id="about">
+      <header class="section-heading"><p>Get to know me</p><h2>Turning ideas into <em>systems.</em></h2><p class="lede">Software engineering, cloud delivery and security, connected through practical project work.</p></header>
+      <div class="reference-bento">
+        <article class="bento-card profile-tile"><div class="avatar"><img src="assets/ritik-sah-profile.jpeg" alt="Portrait of Ritik Sah" width="543" height="640"></div><div><p class="meta">Software engineer</p><h3>Ritik Sah.</h3><p>I build cloud, full-stack and security-focused products. Computing Systems undergraduate in London.</p></div></article>
+        <div class="bento-card ticker-tile"><span>Software engineering · Cloud systems · Open source · Security engineering</span></div>
+        <a class="bento-card maintainer-tile" href="https://github.com/OWASP/openshield/blob/dev/MAINTAINERS.md" target="_blank" rel="noreferrer"><p class="meta">OWASP OpenShield</p><strong>API + AI</strong><span>Public maintainer record</span></a>
+        <a class="bento-card showcase-tile" href="#work"><img src="assets/dusk-architecture.svg" alt="DUSK architecture"><p class="meta">Showcase</p><h3>Projects</h3></a>
+        <article class="bento-card tools-tile"><p class="meta">Core expertise</p><div class="chips"><span>Python</span><span>Azure</span><span>Flask</span><span>Angular</span><span>SQL</span><span>Docker</span></div></article>
+        <article class="bento-card disciplines-tile"><div><p class="meta">Specialisation</p><h3>Engineering<br>focus</h3></div><div class="chips"><span>Web apps</span><span>Cloud</span><span>Backends</span><span>Security</span></div></article>
+        <article class="bento-card profiles-tile"><div class="profile-socials"><a class="inline-social GitHub" href="https://github.com/ritiksah141" aria-label="GitHub" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.3-2-1-2.5 3-.3 6-1.5 6-6a5 5 0 0 0-1.5-3.5c.2-1 .2-2-.2-3-2 0-3 1-3.5 1.5a13 13 0 0 0-6 0C8 4 7 3 5 3c-.4 1-.4 2-.2 3A5 5 0 0 0 3.3 9.5c0 4.5 3 5.7 6 6-.7.5-1 1.5-1 2.5v4"/></svg></a><a class="inline-social LinkedIn" href="https://www.linkedin.com/in/ritik-sah-858015335/" aria-label="LinkedIn" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="8" width="4" height="13"/><circle cx="5" cy="3.5" r="2"/><path d="M11 21V8h4v2c3-4 7-2 7 3v8h-4v-8c0-2-3-2-3 0v8z"/></svg></a><a class="inline-social Email" href="mailto:ritiksah141@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg></a></div><p class="meta">Stay connected</p><h3>Profiles</h3></article>
+        <article class="bento-card evidence-tile" id="proof"><div><strong>05</strong><span>Featured<br>projects</span></div><div><strong>SIE</strong><span>DUSK<br>integration</span></div><div><strong>OWASP</strong><span>OpenShield<br>maintainer</span></div></article>
+        <a class="bento-card together-tile" href="#contact"><span aria-hidden="true">+</span><h3>Let’s<br>work <em>together.</em></h3><p>Have an engineering role or project in mind? Let’s talk.</p></a>
       </div>
-    </div>
-
-    <section id="about">
-      <div class="shell">
-        <div class="section-intro reveal">
-          <p class="section-kicker">About the engineer</p>
-          <div>
-            <h2>Reliable systems start with clear boundaries.</h2>
-            <p>I am a final-year BSc Computing Systems student and open-source maintainer. My work connects backend engineering, cloud delivery and security controls without treating any of them as decoration.</p>
+    </section>
+    <section class="section expertise" id="expertise"><div class="shell"><header class="section-heading"><p>Core disciplines</p><h2>Disciplines engineered for dependable systems.</h2></header><div class="expertise-layout"><div class="expertise-tabs" role="tablist" aria-label="Engineering disciplines"><button role="tab" aria-selected="true" data-expertise="software">Software engineering</button><button role="tab" aria-selected="false" data-expertise="cloud">Cloud and delivery</button><button role="tab" aria-selected="false" data-expertise="security">Security engineering</button><button role="tab" aria-selected="false" data-expertise="quality">Quality engineering</button></div><div class="expertise-panel" id="expertise-panel" role="tabpanel"></div></div></div></section>
+    <section class="section recognition shell" id="recognition" aria-labelledby="recognition-title">
+      <article class="credential-card" tabindex="0" role="button" aria-pressed="false"><span class="credential-symbol" aria-hidden="true"><img src="assets/ui-icons/maintainer.svg" alt="" width="28" height="28"></span><p class="meta">Open-source responsibility</p><h3>OWASP OpenShield</h3><p>API and AI maintainer</p><a href="https://github.com/OWASP/openshield/blob/dev/MAINTAINERS.md" target="_blank" rel="noreferrer">View maintainer record</a></article>
+      <header class="section-heading"><p>Professional milestones</p><h2 id="recognition-title">Recognition<br>&amp; <em>contributions.</em></h2><p class="lede">Academic recognition and public contributions that support my engineering work.</p><a class="button" href="resume/">View resume</a></header>
+      <article class="credential-card" tabindex="0" role="button" aria-pressed="false"><span class="credential-symbol" aria-hidden="true"><img src="assets/ui-icons/showcase.svg" alt="" width="28" height="28"></span><p class="meta">External integration</p><h3>Superlinked SIE</h3><p>DUSK agent-action-monitor example</p><a href="https://github.com/superlinked/sie/tree/main/examples/agent-action-monitor" target="_blank" rel="noreferrer">Explore integration</a></article>
+      <article class="credential-card academic-card" tabindex="0" role="button" aria-pressed="false"><span class="credential-symbol" aria-hidden="true"><img src="assets/ui-icons/journey-award.svg" alt="" width="28" height="28"></span><p class="meta">Ulster University London</p><h3>Dean’s Award</h3><p>Recipient in Years 1 and 2</p></article>
+      <article class="credential-card academic-card" tabindex="0" role="button" aria-pressed="false"><span class="credential-symbol" aria-hidden="true"><img src="assets/ui-icons/evidence.svg" alt="" width="28" height="28"></span><p class="meta">University showcase · 2026</p><h3>QAHE TechFest</h3><p>Project Showcase and Poster Exhibition winner</p></article>
+    </section>
+    <section class="section journey" id="journey"><div class="shell journey-grid">
+      <header class="section-heading sticky-heading"><p>The story so far</p><h2>Tracing my path.</h2><p class="lede">Four phases that moved me from data operations into software, cloud and security engineering.</p></header>
+      <div class="journey-map">
+        <div class="journey-map-context"><span class="journey-map-symbol" aria-hidden="true"><img src="assets/rs-monogram-source.png" alt="" width="48" height="48"></span><div><small>Direction</small><strong>Build dependable software, cloud platforms and security systems</strong></div><span class="journey-map-status">London · open to graduate roles</span></div>
+        <div class="journey-map-body">
+          <ol class="timeline">
+            <li><span class="phase-label">Phase 01</span><time>2020–2022</time><div><span class="timeline-icon" aria-hidden="true">⌘</span><h3>Database foundations</h3><p>Maintained SQL and Oracle data, analysed trends and supported accurate operational records at Arunima Secondary School.</p><span class="phase-outcome">Accuracy · data operations</span></div></li>
+            <li><span class="phase-label">Phase 02</span><time>University</time><div><span class="timeline-icon" aria-hidden="true">◇</span><h3>Systems engineering</h3><p>Studied Computing Systems at Ulster University London and earned Dean’s Award recognition in Years 1 and 2.</p><span class="phase-outcome">Software · cloud · networks</span></div></li>
+            <li><span class="phase-label">Phase 03</span><time>Open source</time><div><span class="timeline-icon" aria-hidden="true">↗</span><h3>Contributor leadership</h3><p>Moved into OpenShield and DUSK delivery across cloud posture, AI security and externally published integration work.</p><span class="phase-outcome">OWASP · Superlinked SIE</span></div></li>
+            <li><span class="phase-label">Phase 04</span><time>2026</time><div><span class="timeline-icon" aria-hidden="true">✦</span><h3>Public recognition</h3><p>Won the QAHE TechFest Project Showcase and Poster Exhibition while continuing evidence-backed product work.</p><span class="phase-outcome">TechFest winner · portfolio</span></div></li>
+          </ol>
+          <svg class="journey-curve" viewBox="0 0 1000 190" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42 C180 45 225 158 475 150 S760 58 1000 30"/></svg>
+          <div class="journey-notes" aria-label="Journey reflections">
+            <p class="journey-note note-one"><strong>Foundation</strong><span>Data work taught me to value accuracy and dependable systems.</span></p>
+            <p class="journey-note note-two is-inverted"><strong>Turning point</strong><span>University projects moved me from operating systems to engineering them.</span></p>
+            <p class="journey-note note-three"><strong>Momentum</strong><span>Open source turned individual projects into public, collaborative evidence.</span></p>
           </div>
         </div>
-
-        <div class="bento">
-          <article class="tile wide signal reveal">
-            <h3>What I bring to a team</h3>
-            <p>I translate technical requirements into reviewable software, test failure cases, document trade-offs and keep delivery evidence separate from marketing claims.</p>
-            <div class="command"><b>$ cat engineering-profile.txt</b><br>BACKEND&nbsp;&nbsp;&nbsp; Python services, Flask APIs and SQL workflows<br>CLOUD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Azure systems, containers and CI/CD<br>QUALITY&nbsp;&nbsp;&nbsp; Unit, integration and regression tests<br>SECURITY&nbsp;&nbsp; Posture controls and runtime policy gates</div>
-          </article>
-          <article class="tile narrow reveal">
-            <h3>Current direction</h3>
-            <div class="proof-list">
-              <div class="proof-row"><span>Primary</span><p>Graduate software engineering and Python backend roles</p></div>
-              <div class="proof-row"><span>Specialism</span><p>Cloud, platform, DevSecOps and security engineering</p></div>
-              <div class="proof-row"><span>Location</span><p>United Kingdom, open to relocation</p></div>
-            </div>
-          </article>
-          <article class="tile half reveal">
-            <h3>Working stack</h3>
-            <div class="stack-cloud" aria-label="Technical skills">
-              <span>Python</span><span>Flask</span><span>JavaScript</span><span>Angular</span><span>SQL</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Azure</span><span>Docker</span><span>Linux</span><span>GitHub Actions</span>
-            </div>
-          </article>
-          <article class="tile half reveal">
-            <h3>How I work</h3>
-            <div class="proof-list">
-              <div class="proof-row"><span>01</span><p>Understand the system and its failure boundaries.</p></div>
-              <div class="proof-row"><span>02</span><p>Implement the smallest defensible change.</p></div>
-              <div class="proof-row"><span>03</span><p>Test the normal path, degraded states and recovery.</p></div>
-              <div class="proof-row"><span>04</span><p>Record what is proven and what remains unverified.</p></div>
-            </div>
-          </article>
-        </div>
+        <div class="journey-opportunity"><span>Next chapter</span><strong>Graduate software, cloud or platform engineering</strong><a href="#contact">Start a conversation ↗</a></div>
       </div>
-    </section>
-
-    <section id="work">
-      <div class="shell">
-        <div class="section-intro reveal">
-          <p class="section-kicker">Selected engineering work</p>
-          <div>
-            <h2>Systems built around real operating problems.</h2>
-            <p>Four projects show the breadth of the work. Each one links to public evidence so the architecture, limitations and contribution history can be inspected directly.</p>
-          </div>
+    </div></section>
+    <section class="section shell" id="skills"><header class="section-heading"><p>My engineering stack</p><h2>Technologies I<span id="technology-phrase">engineer with</span></h2><p class="lede">Building dependable software with tools selected for delivery, observability and long-term maintainability.</p></header><div class="skill-rails" aria-label="Technical skills"><div><strong class="sr-only">Languages, cloud, delivery, data and systems</strong><span>Python</span><span>Java</span><span>SQL</span><span>PHP</span><span>Bash</span><span>Flask</span><span>REST APIs</span><span>Angular 17</span><span>Microsoft Azure</span><span>Docker</span><span>Linux</span><span>GitHub Actions</span><span>CI/CD</span><span>Key Vault</span><span>Logic Apps</span><span>PostgreSQL</span><span>MongoDB</span><span>SQLite</span><span>Redis</span><span>Cosmos DB</span><span>Zeek</span><span>River ML</span><span>Raspberry Pi</span></div></div></section>
+    <section class="section shell" id="work"><header class="section-heading split-heading"><p>Portfolio</p><h2>Building Reliable<br>Software Systems</h2><p class="lede">Five projects chosen for depth, external validation and relevance to software, cloud and security roles.</p><div class="work-stats" aria-label="Portfolio overview"><div><strong id="work-project-count">5</strong><span>Projects</span></div><div><strong id="work-stack-count"></strong><span>Technologies</span></div><div><strong id="work-area-count"></strong><span>Engineering areas</span></div></div></header><div class="filter-row" aria-label="Filter projects"><button class="active" data-filter="all">All</button><button data-filter="open-source">Open source</button><button data-filter="cloud">Cloud</button><button data-filter="full-stack">Full-stack</button><button data-filter="security">Security</button></div><div class="project-grid" id="project-grid"></div><div class="section-action"><a class="button" href="projects/">Explore all case studies</a></div></section>
+    <section class="section values" id="workflow"><div class="shell">
+      <header class="section-heading"><p>Engineering lifecycle</p><h2>From problem to dependable system.</h2><p class="lede">The questions I ask, the decisions I make and the evidence I expect across a software product’s lifecycle.</p></header>
+      <div class="lifecycle-story">
+        <aside class="lifecycle-intro">
+          <p class="meta">My design approach</p>
+          <h3>Software design is a loop, not a hand-off.</h3>
+          <p>I connect product intent, system boundaries, delivery and operations so a feature remains understandable after it ships.</p>
+          <div class="lifecycle-compass" aria-label="Lifecycle priorities"><span>Clarity</span><span>Security</span><span>Evidence</span><span>Recovery</span></div>
+          <p class="lifecycle-return"><span aria-hidden="true">↺</span> Runtime evidence returns to discovery and shapes the next iteration.</p>
+        </aside>
+        <div class="lifecycle-map-body">
+          <ol class="lifecycle-stages">
+            <li class="lifecycle-stage"><span class="stage-number">01</span><div class="stage-copy"><p class="stage-question">What problem deserves solving?</p><h3>Discover and frame</h3><p>Understand the user, operating context, constraints, failure impact and what a successful outcome can be measured against.</p><div class="stage-outputs"><span>Problem statement</span><span>Risks</span><span>Acceptance criteria</span></div></div></li>
+            <li class="lifecycle-stage"><span class="stage-number">02</span><div class="stage-copy"><p class="stage-question">Where should responsibility live?</p><h3>Design boundaries</h3><p>Separate presentation, APIs, data, identity and infrastructure. Define contracts, trust boundaries and degraded behaviour before implementation.</p><div class="stage-outputs"><span>Architecture</span><span>API contracts</span><span>Threat model</span></div></div></li>
+            <li class="lifecycle-stage"><span class="stage-number">03</span><div class="stage-copy"><p class="stage-question">What is the smallest useful slice?</p><h3>Build for change</h3><p>Deliver thin vertical slices, keep configuration explicit, version schema changes and make the local path reproducible for contributors.</p><div class="stage-outputs"><span>Working increments</span><span>Migrations</span><span>Documentation</span></div></div></li>
+            <li class="lifecycle-stage"><span class="stage-number">04</span><div class="stage-copy"><p class="stage-question">What evidence makes this trustworthy?</p><h3>Verify the system</h3><p>Combine automated tests, contract checks, security scanning, runtime checks and focused manual review instead of treating one green check as proof.</p><div class="stage-outputs"><span>Test evidence</span><span>CI gates</span><span>Review record</span></div></div></li>
+            <li class="lifecycle-stage"><span class="stage-number">05</span><div class="stage-copy"><p class="stage-question">How will it fail and improve?</p><h3>Operate and evolve</h3><p>Design observability, recovery paths and ownership into delivery. Use incidents, telemetry and user feedback to guide the next decision.</p><div class="stage-outputs"><span>Telemetry</span><span>Runbooks</span><span>Feedback loop</span></div></div></li>
+          </ol>
         </div>
-
-        <div class="projects">
-          <article class="project reveal">
-            <span class="project-index">01 / 04</span>
-            <div><h3>OpenShield</h3><p class="project-role">API & AI maintainer</p></div>
-            <div class="project-copy"><p>An open-source Azure cloud-security platform that identifies misconfigurations and quantum-unsafe cryptography, maps findings to compliance frameworks and provides remediation guidance.</p><div class="project-tags"><span>Python</span><span>Flask</span><span>Azure</span><span>CI/CD</span><span>Backend tests</span></div></div>
-            <div class="project-links"><a href="https://github.com/OWASP/openshield" target="_blank" rel="noopener">Repository</a><a href="https://github.com/OWASP/openshield/blob/dev/MAINTAINERS.md" target="_blank" rel="noopener">Maintainer record</a></div>
-          </article>
-
-          <article class="project reveal">
-            <span class="project-index">02 / 04</span>
-            <div><h3>DUSK</h3><p class="project-role">Co-builder</p></div>
-            <div class="project-copy"><p>A vendor-neutral runtime gate that evaluates proposed AI-agent actions against behavioural history before those actions reach protected systems, with observable watch and enforce paths.</p><div class="project-tags"><span>Python</span><span>AI-agent security</span><span>Policy gates</span><span>Docker</span><span>Observability</span></div></div>
-            <div class="project-links"><a href="https://github.com/ShieldTech-Ltd/DUSK" target="_blank" rel="noopener">Repository</a><a href="https://github.com/superlinked/sie/tree/main/examples/agent-action-monitor" target="_blank" rel="noopener">Superlinked SIE example</a></div>
-          </article>
-
-          <article class="project reveal">
-            <span class="project-index">03 / 04</span>
-            <div><h3>IoTSentinel</h3><p class="project-role">Solo final-year project</p></div>
-            <div class="project-copy"><p>A local-first Raspberry Pi appliance for device discovery, vulnerability posture, traffic analysis and plain-English alert explanations across home networks.</p><div class="project-tags"><span>Python</span><span>Raspberry Pi</span><span>Network monitoring</span><span>Online learning</span><span>Testing</span></div></div>
-            <div class="project-links"><a href="https://iotsentinel.org/" target="_blank" rel="noopener">Project website</a><a href="https://github.com/ritiksah141/iotsentinel" target="_blank" rel="noopener">Repository</a></div>
-          </article>
-
-          <article class="project reveal">
-            <span class="project-index">04 / 04</span>
-            <div><h3>BreachLens</h3><p class="project-role">Full-stack engineering</p></div>
-            <div class="project-copy"><p>A threat-intelligence platform for breach tracking, compromised-asset monitoring and privacy-preserving exposure checks, backed by an automated OSINT workflow.</p><div class="project-tags"><span>Flask</span><span>Angular</span><span>MongoDB</span><span>Redis</span><span>Docker</span></div></div>
-            <div class="project-links"><a href="https://github.com/ritiksah141/BreachLens" target="_blank" rel="noopener">Repository</a></div>
-          </article>
-        </div>
+        <div class="lifecycle-map-footer"><span>Continuous ownership</span><strong>Discover → design → build → verify → operate → learn</strong><small>Evidence feeds the next decision</small></div>
       </div>
+    </div></section>
+    <section class="section shell github-section" id="github-activity" aria-labelledby="github-heading">
+      <header class="section-heading"><p>Open source</p><h2 id="github-heading">Building in <em>public.</em></h2><p class="lede">Recent public activity from GitHub.</p></header>
+      <div class="github-panel"><div class="github-panel-header"><a href="https://github.com/ritiksah141" target="_blank" rel="noreferrer">ritiksah141</a><span id="github-status" role="status">Loading public activity…</span></div><div class="contribution-summary"><div><strong id="contribution-total">—</strong><span>contributions in the last year</span></div><span id="contribution-status" role="status">Loading contribution calendar…</span></div><div class="contribution-calendar" id="contribution-calendar" aria-live="polite"></div><div class="activity-divider"><span>Recent public activity</span></div><ul id="github-events" aria-label="Recent public GitHub events"></ul><a class="github-profile-link" href="https://github.com/ritiksah141" target="_blank" rel="noreferrer">View full GitHub profile</a></div>
     </section>
-
-    <section id="evidence">
-      <div class="shell">
-        <div class="section-intro reveal">
-          <p class="section-kicker">Evidence layer</p>
-          <div>
-            <h2>Proof before polish.</h2>
-            <p>The strongest claims on this portfolio point to public records, working repositories or confirmed recognition. Repository benchmarks remain labelled as benchmarks, not production guarantees.</p>
-          </div>
-        </div>
-
-        <div class="evidence-grid">
-          <article class="evidence-card reveal">
-            <h3>Public engineering records</h3>
-            <p>External references that clarify ownership and contribution scope.</p>
-            <div class="record"><div><b>OpenShield API & AI maintainer</b><small>API, AI layer, CI and infrastructure review, backend tests</small></div><a href="https://github.com/OWASP/openshield/blob/dev/MAINTAINERS.md" target="_blank" rel="noopener">Inspect</a></div>
-            <div class="record"><div><b>DUSK in Superlinked SIE</b><small>Self-contained agent-action-monitor example with credits and limitations</small></div><a href="https://github.com/superlinked/sie/tree/main/examples/agent-action-monitor" target="_blank" rel="noopener">Inspect</a></div>
-            <div class="record"><div><b>Open repositories</b><small>Implementation history, tests, documentation and architecture decisions</small></div><a href="https://github.com/ritiksah141" target="_blank" rel="noopener">Inspect</a></div>
-          </article>
-
-          <article class="evidence-card reveal">
-            <h3>Development path</h3>
-            <div class="journey">
-              <div class="journey-item"><time>2020–2022</time><h4>Database administration</h4><p>Maintained school records, supported retrieval and checked data consistency.</p></div>
-              <div class="journey-item"><time>2023–2026</time><h4>BSc Computing Systems</h4><p>Built foundations across software, cloud, networking, databases, AI and security.</p></div>
-              <div class="journey-item"><time>2026</time><h4>Open-source maintenance</h4><p>Maintaining API and AI areas in OpenShield while contributing delivery and test evidence.</p></div>
-              <div class="journey-item"><time>Now</time><h4>Graduate engineering roles</h4><p>Targeting software, backend, cloud/platform and suitable security-engineering teams.</p></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="shell reveal">
-        <h2>Build something dependable.</h2>
-        <p>I am open to UK graduate and junior roles where I can contribute to software delivery, learn through code review and take increasing responsibility for production systems.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="mailto:ritiksah141@gmail.com">Start a conversation</a>
-          <a class="button" href="https://www.linkedin.com/in/ritik-sah-858015335/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="button" href="https://github.com/ritiksah141" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </section>
+    <section class="section contact-section" id="contact"><div class="contact-mesh" aria-hidden="true"></div><div class="shell contact-wrap"><p class="contact-badge">● Get in touch</p><h2>Let’s build something<br>that makes a difference.</h2><p class="contact-invitation">“From reliable <em>software</em> to secure <em>cloud platforms</em>, I’m ready to contribute, learn and build with your team.”</p><div class="contact-actions"><a class="button contact-cta" href="contact/">Get in Touch <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div></div></section>
   </main>
-
-  <footer>
-    <div class="shell footer-row"><span>Ritik Sah · London, United Kingdom</span><span>Software · Cloud · Security</span></div>
-  </footer>
-
-  <script>
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const sections = [...document.querySelectorAll('main section[id]')];
-    const navLinks = [...document.querySelectorAll('.nav a')];
-
-    const setActive = () => {
-      const marker = window.scrollY + window.innerHeight * 0.35;
-      let current = 'home';
-      for (const section of sections) {
-        if (section.offsetTop <= marker) current = section.id;
-      }
-      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current}`));
-    };
-
-    if (!reducedMotion && 'IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.reveal').forEach(item => revealObserver.observe(item));
-    } else {
-      document.querySelectorAll('.reveal').forEach(item => item.classList.add('visible'));
-    }
-
-    addEventListener('scroll', setActive, { passive: true });
-    addEventListener('resize', setActive);
-    setActive();
-  </script>
+  <footer class="reference-footer"><div class="footer-identity"><img class="footer-logo" src="assets/rs-monogram-source.png" alt="" width="58" height="58"><strong>Ritik Sah</strong><span class="footer-status">● Open to Work</span></div><p>© <span id="year"></span> · Software, cloud &amp; security engineering</p><p class="footer-caption">Built with care. Backed by evidence.</p><nav class="footer-links" aria-label="Footer links"><a href="https://github.com/ritiksah141" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/ritik-sah-858015335/" target="_blank" rel="noreferrer">LinkedIn</a><a href="mailto:ritiksah141@gmail.com">Email</a><a href="resume/">Resume</a><a href="#top">Back to Top ↑</a></nav><span class="footer-location">London, United Kingdom</span></footer>
+  <div class="utility-dock" aria-label="Interactive tools"><button data-open="terminal" aria-label="Open terminal playground"><span>&gt;_</span> Terminal</button><button data-open="chat" aria-label="Open portfolio assistant"><span>✦</span> Ask</button></div>
+  <dialog class="tool-dialog" id="terminal-dialog" aria-labelledby="terminal-title"><div class="dialog-bar terminal-titlebar"><div class="window-controls" aria-label="Terminal window controls"><button class="window-control close" data-close aria-label="Close terminal"></button><button class="window-control minimise" type="button" data-terminal-action="minimise" aria-label="Minimise terminal"></button><button class="window-control expand" type="button" data-terminal-action="expand" aria-label="Expand terminal"></button></div><strong id="terminal-title"><span aria-hidden="true">$_</span><span>ritik@portfolio: ~</span></strong><button class="terminal-theme" type="button" data-terminal-action="theme">theme: matrix</button><button class="terminal-close" data-close aria-label="Close terminal">×</button></div><div class="terminal-shortcuts" aria-label="Terminal command shortcuts"><span>commands</span><button data-command="help">help</button><button data-command="projects">projects</button><button data-command="skills">skills</button><button data-command="about">about</button><button data-command="neofetch">neofetch</button><button data-command="clear">clear</button></div><div class="terminal-output" id="terminal-output" aria-live="polite"><pre class="terminal-banner" aria-hidden="true"><span>┌─ Ritik Sah / portfolio</span><span>└─ software · cloud · security</span></pre><p class="terminal-boot"><span class="terminal-ok">[ OK ]</span> Portfolio shell ready</p><p class="terminal-muted">Type <b>help</b> to list commands. Use ↑ and ↓ for history; Tab completes.</p></div><form class="terminal-form" id="terminal-form"><label for="terminal-input"><span class="prompt-user">visitor@portfolio</span><span class="prompt-path">:~</span><span class="prompt-symbol">$</span></label><input id="terminal-input" placeholder="enter command" autocomplete="off" spellcheck="false" aria-describedby="terminal-title"><span class="terminal-hint">bash</span></form></dialog>
+  <dialog class="tool-dialog chat-dialog" id="chat-dialog" aria-labelledby="chat-title"><div class="dialog-bar"><div class="assistant-heading"><span class="assistant-symbol" aria-hidden="true">⌘</span><div><strong id="chat-title">Portfolio Assistant</strong><small>● Ready · Guided answers</small></div></div><button data-close aria-label="Close assistant">×</button></div><div class="chat-messages" id="chat-messages" aria-live="polite"><div class="bot">Hi, I’m Ritik’s portfolio assistant. I can help you explore his projects, skills and experience using the content on this site. What would you like to know?</div></div><div class="prompt-row" id="prompt-row"><button>What does Ritik build?</button><button>Show open-source evidence</button><button>Which project uses Azure?</button></div><form class="chat-form" id="chat-form"><label class="sr-only" for="chat-input">Ask a question</label><input id="chat-input" placeholder="Ask about Ritik’s work…" autocomplete="off"><button aria-label="Send message">➤</button></form></dialog>
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title"><button class="dialog-close" data-close aria-label="Close project details">Close</button><div id="project-dialog-content"></div></dialog>
 </body>
 </html>
