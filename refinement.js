@@ -84,6 +84,31 @@
     });
   });
 
+  const credentialDialog = document.querySelector('#credential-dialog');
+  const credentialImage = document.querySelector('#credential-dialog-image');
+  const credentialTitle = document.querySelector('#credential-dialog-title');
+  const credentialSource = document.querySelector('#credential-dialog-source');
+  const openCredential = trigger => {
+    if (!credentialDialog || !credentialImage || !credentialTitle || !credentialSource) return;
+    const src = trigger.dataset.credentialSrc;
+    const title = trigger.dataset.credentialTitle || 'Credential preview';
+    if (!src) return;
+    credentialImage.src = src;
+    credentialImage.alt = title;
+    credentialTitle.textContent = title;
+    const source = trigger.dataset.credentialLink;
+    credentialSource.hidden = !source;
+    if (source) credentialSource.href = source;
+    credentialDialog.showModal();
+  };
+  document.querySelectorAll('[data-credential-src]').forEach(trigger => {
+    trigger.addEventListener('click', () => openCredential(trigger));
+  });
+  credentialDialog?.querySelector('[data-credential-close]')?.addEventListener('click', () => credentialDialog.close());
+  credentialDialog?.addEventListener('click', event => {
+    if (event.target === credentialDialog) credentialDialog.close();
+  });
+
   const technologyPhrase = document.querySelector('#technology-phrase');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const phrases = ['engineer with', 'ship products with', 'secure systems with', 'learn deeply with'];
